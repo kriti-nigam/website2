@@ -1,0 +1,250 @@
+/* General Styles */
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif; /* Apply Poppins as the primary font */
+  margin: 0;
+  padding: 0;
+  background-color: #eaf4fc; /* Light blue background */
+  color: #333; /* Dark gray text color */
+}
+
+h1, h2, h3, p, li, button {
+  font-family: 'Poppins', sans-serif; /* Ensure headings, buttons, and other elements use Poppins */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  cursor: pointer;
+  font-weight: bold;
+  color: #9393E4;
+  text-transform: capitalize;
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.intro {
+  max-width: 600px;
+}
+
+.intro h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-transform: none; /* Ensure text is not in uppercase */
+}
+
+.intro h1 span {
+  color: #9393E4; /* Highlight color */
+  text-transform: lowercase; /* Force lowercase for the highlighted text */
+}
+
+.intro p {
+  margin: 10px 0 20px;
+  font-size: 1.2rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #9393E4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-pic img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+/* About Section */
+.about {
+  margin-top: 80px;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #9393E4;
+  margin-bottom: 20px;
+}
+
+.about p {
+  margin: 10px 0;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Work Section */
+.work {
+  margin-top: 80px;
+}
+
+.work h2 {
+  font-size: 2.5rem;
+  color: #9393E4;
+  margin-bottom: 30px;
+}
+
+.work p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.work-item {
+  display: flex;
+  margin-bottom: 25px; /* Space between work items */
+  align-items: flex-start;
+}
+
+.work-left {
+  flex: 0 0 30%; /* Left side occupies 30% of the width */
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.4; /* Adjust spacing between lines */
+  color: #333;
+  text-align: left; /* Align text to the right */
+  padding-right: 15px; /* Add more space between left and right */
+}
+
+.work-right {
+  flex: 1; /* Right side takes the remaining width */
+  color: #333;
+}
+
+.work-right p:first-child {
+  font-weight: bold; /* Bold for the company name */
+  margin-bottom: 5px; /* Spacing between company name and description */
+}
+
+.work-right p {
+  margin: 0; /* Remove default margins */
+  line-height: 1.6; /* Better readability */
+}
+
+.work-item p {
+  margin: 0;
+}
+
+/* Custom bullet style */
+.work-left p::before {
+  content: "●";
+  color: #9393E4; /* Purple bullet color */
+  margin-right: 10px; /* Adjust spacing between bullet and text */
+  font-size: 1.2rem;
+  line-height: 0; /* Align bullet with text */
+  display: inline-block;
+}
+
+
+
+/* Interests Section */
+/* Interests Section */
+.interests {
+  margin-top: 80px;
+}
+
+.interests h2 {
+  font-size: 2.5rem;
+  color: #9393E4; /* Updated purple */
+  margin-bottom: 20px;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+  gap: 20px;
+}
+
+.interest-grid div {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+}
+
+/* Ensure images fit the container proportionally */
+.interest-grid img {
+  margin-top: 7px;
+  width: 100%; /* Make image take full width of the container */
+  height: 200px; /* Fixed height for consistent layout */
+  object-fit: cover; /* Ensures image scales proportionally to fill the container */
+  border-radius: 10px; /* Rounded corners for images */
+  margin-bottom: 10px;
+}
+
+.interest-grid p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Footer Section */
+.footer {
+  margin-top: 80px;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #eaf4fc; /* Match background */
+}
+
+.footer h2 {
+  font-size: 2.5rem;
+  color: #9393E4; /* Match purple color */
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between icons */
+  margin-top: 20px;
+}
+
+.social-icons img {
+  width: 40px; /* Icon size */
+  height: 40px;
+  transition: transform 0.2s ease; /* Add hover animation */
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
