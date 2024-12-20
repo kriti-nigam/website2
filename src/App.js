@@ -91,7 +91,7 @@ function App() {
 
       <section className="interests">
         <h2>interests.</h2>
-        <p>now i happen to be a woman of multiple interests, so bear with me in this section rolls up her sleeves some of them are more seasoned and I’ve been at them for a while, some are more recent and possibly an outcome of living away from friends and family. i’ve been away from home for about 3 years and its taught me a few things. so after some navigation, i’ve expanded my interests. they now include exercising regularly, trying to perfect my mum’s chicken curry recipe and the occasional binge watching.   below are some of my more long-standing interests-</p>
+        <p>now i happen to be a woman of multiple interests, so bear with me in this section rolls up her sleevessome of them are more seasoned and I’ve been at them for a while, some are more recent and possibly an outcome of living away from friends and family. i’ve been away from home for about 3 years and its taught me a few things. so after some navigation, i’ve expanded my interests. they now include exercising regularly, trying to perfect my mum’s chicken curry recipe and the occasional binge watching. below are some of my more long-standing interests-</p>
         <br/>
         <br/>
         <div className="interest-grid">
@@ -119,19 +119,20 @@ function App() {
     if you want to stay in touch, here’s how you can reach out:
   </p>
   <div className="social-icons">
-    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.linkedin.com/in/kriti-nigam-34549a185/" target="_blank" rel="noopener noreferrer">
       <img src="linkedin.png" alt="LinkedIn" />
     </a>
-    <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+    <a href="https://x.com/KritiNigam4" target="_blank" rel="noopener noreferrer">
       <img src="twitter.png" alt="Twitter" />
     </a>
-    <a href="mailto:example@example.com">
+    <a href="mailto:kritinigam3299@gmail.com">
       <img src="email.png" alt="Email" />
     </a>
   </div>
 </footer>
 </div>
-  );
+);
 }
+
 
 export default App;
