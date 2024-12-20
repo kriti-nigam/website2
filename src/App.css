@@ -229,20 +229,20 @@ h1, h2, h3, p, li, button {
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 40px; /* Increase spacing between text and social icons */
 }
 
 .social-icons {
   display: flex;
   justify-content: center;
-  gap: 30px; /* Space between icons */
+  gap: 60px; /* Space between icons */
   margin-top: 20px;
 }
 
 .social-icons img {
-  width: 40px; /* Icon size */
-  height: 40px;
-  transition: transform 0.2s ease; /* Add hover animation */
+  width: 30px; /* Adjust icon size */
+  height: 30px;
+  transition: transform 0.2s ease; /* Hover effect */
 }
 
 .social-icons img:hover {
