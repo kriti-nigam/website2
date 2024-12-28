@@ -1,17 +1,33 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Reading from "./Reading";
+import Music from "./Music";
+import Photography from "./Photography";
+
+
 
 function App() {
   return (
     <div className="container">
       <nav className="navbar">
-        <ul>
-          <li>home</li>
-          <li>about</li>
-          <li>work</li>
-          <li>interests</li>
-        </ul>
-      </nav>
+  <ul>
+    <li><Link to="/">home</Link></li>
+    <li><Link to="/about">about</Link></li>
+    <li><Link to="/work">work</Link></li>
+    <li><Link to="/interests">interests</Link></li>
+  </ul>
+</nav>
+
+<Router>
+  <Routes>
+    <Route path="/" element={<App />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/work" element={<Work />} />
+    <Route path="/interests" element={<Interests />} />
+  </Routes>
+</Router>
+
 
       <header className="header">
         <div className="intro">
@@ -89,26 +105,33 @@ function App() {
 
 
 
-      <section className="interests">
-        <h2>interests.</h2>
-        <p>now i happen to be a woman of multiple interests, so bear with me in this; *section rolls up her sleeves* some of them are more seasoned and I’ve been at them for a while, some are more recent and possibly an outcome of living away from friends and family. i’ve been away from home for about 3 years and its taught me a few things. so after some navigation, i’ve expanded my interests. they now include exercising regularly, trying to perfect my mum’s chicken curry recipe and the occasional binge watching. below are some of my more long-standing interests-</p>
-        <br/>
-        <br/>
-        <div className="interest-grid">
-          <div>Reading
-            <img src="reading.jpeg" alt="Interest-Reading" />
-          </div>
-          <div>Photography
-            <img src="photography.jpg" alt="Interest-Photography" />
-          </div>
-          <div>Music
-            <img src="music.jpg" alt="Interest-Music" />
-          </div>
-          <div>Writing
-            <img src="writing.jpg" alt="Interest-Writing" />
-          </div>
-        </div>
-      </section>
+<div className="interest-grid">
+  <Link to="/photography">
+    <div>
+      Photography
+      <img src="photography.jpg" alt="Interest-Photography" />
+    </div>
+  </Link>
+  <Link to="/reading">
+    <div>
+      Reading
+      <img src="reading.jpeg" alt="Interest-Reading" />
+    </div>
+  </Link>
+  <Link to="/music">
+    <div>
+      Music
+      <img src="music.jpg" alt="Interest-Music" />
+    </div>
+  </Link>
+  <Link to="/writing">
+    <div>
+      Writing
+      <img src="writing.jpg" alt="Interest-Writing" />
+    </div>
+  </Link>
+</div>
+
 
       <footer className="footer">
   <h2>stay in touch.</h2>
