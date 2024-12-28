@@ -91,7 +91,7 @@ function App() {
 
       <section className="interests">
         <h2>interests.</h2>
-        <p>now i happen to be a woman of multiple interests, so bear with me in this section rolls up her sleevessome of them are more seasoned and I’ve been at them for a while, some are more recent and possibly an outcome of living away from friends and family. i’ve been away from home for about 3 years and its taught me a few things. so after some navigation, i’ve expanded my interests. they now include exercising regularly, trying to perfect my mum’s chicken curry recipe and the occasional binge watching. below are some of my more long-standing interests-</p>
+        <p>now i happen to be a woman of multiple interests, so bear with me in this; *section rolls up her sleeves* some of them are more seasoned and I’ve been at them for a while, some are more recent and possibly an outcome of living away from friends and family. i’ve been away from home for about 3 years and its taught me a few things. so after some navigation, i’ve expanded my interests. they now include exercising regularly, trying to perfect my mum’s chicken curry recipe and the occasional binge watching. below are some of my more long-standing interests-</p>
         <br/>
         <br/>
         <div className="interest-grid">
