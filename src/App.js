@@ -33,21 +33,20 @@ export default function App() {
             hello, I'm Kriti, a <br /> <span className="highlight">product manager</span>
           </h1>
           <p>based in Bangalore.</p>
-          <button className="btn">resume</button>
+          {/* <button className="btn">resume</button> */}
         </div>
         <div className="profile-pic">
           <img src="profile.jpg" alt="Profile" />
         </div>
       </header>
 
-      <section className="about">
+      <section className="about" style={{textTransform: "lowercase"}}>
         <h2>about.</h2>
         <p>
           if I have to be honest with you, I've never found intros easy—like how do I
           capture the whole essence of my being in a few words? But let's see how I
           fare out.
-        </p>
-        <p>
+          <br/>
           i write PRDs for a living, work out for mental health, read books for
           sanity, and click pictures for fun. Boring? Maybe.
         </p>
