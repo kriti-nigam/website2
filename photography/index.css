@@ -1,0 +1,83 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* Match font to your design */
+    margin: 0;
+    padding: 0;
+    background-color: #eaf4fc;
+    /* Light blue background */
+    color: #333;
+    /* Text color */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Title Section */
+.photography-header {
+    text-align: center;
+    margin-top: 50px;
+    color: #9393E4;
+    /* Purple text */
+}
+
+.photography-header h1 {
+    font-size: 4rem;
+    text-transform: lowercase;
+}
+
+/* Content Section */
+.photography-content {
+    width: 80%;
+    max-width: 800px;
+    margin: 40px auto;
+    background-color: #f4f9ff;
+    /* Slightly lighter blue for the card */
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.photography-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.vsco-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #9393E4;
+    /* Purple button */
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.vsco-button:hover {
+    background-color: #7a7ac6;
+    /* Darker purple for hover */
+}
