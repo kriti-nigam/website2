@@ -50,11 +50,10 @@ body {
 }
 
 .photography-header h1 {
-    font-size: 3.5rem; /* Keep the reduced font size */
-    font-weight: 700;
-    text-transform: lowercase;
-    margin: 0;
-}
+        font-size: 2.5rem;
+        color: #9393E4;
+        margin-bottom: 20px;
+      }
 
 /* Content Section */
 .photography-content {
