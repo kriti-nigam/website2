@@ -56,47 +56,55 @@ body {
       }
 
 /* Content Section */
-.photography-content {
-    width: 80%; /* Adjust width to match the home page proportions */
-    margin: 40px auto; /* Add vertical margin for consistency */
-    background-color: #dbf4ff; /* Keep the updated background color */
-    padding: 60px 80px; /* Match padding to home page */
-    border-radius: 20px; /* Keep rounded corners */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Retain shadow */
-    text-align: left; /* Align text to the left */
-    line-height: 1.8; /* Maintain readability */
-}
+/* .photography-content {
+    width: 80%; 
+    margin: 40px auto; 
+    background-color: #dbf4ff; 
+    padding: 60px 80px; 
+    border-radius: 20px; 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
+    text-align: left; 
+    line-height: 1.8; 
+} */
+/*}
 
 .photography-content p {
     font-size: 1.1rem; /* Keep the text size consistent */
-    margin: 20px 0;
-}
+    /* .photography-content {
+        width: 80%; 
+        margin: 40px auto; 
+        background-color: #dbf4ff; 
+        padding: 60px 80px; 
+        border-radius: 20px; 
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
+        text-align: left; 
+        line-height: 1.8; 
+    } */
+
 
 
 
 /* Updated Button Styling */
-.vsco-button {
+/* .vsco-button {
     display: inline-block;
-    padding: 20px 40px; /* Increased padding for better spacing */
-    background-color: #5a5ae0; /* Updated button color to match the new heading color */
-    color: #ffffff; /* Ensure contrast with the button background */
-    font-size: 1 rem; /* Slightly larger font size for better readability */
+    padding: 20px 40px; 
+    background-color: #5a5ae0; 
+    color: #ffffff; 
+    font-size: 1 rem; 
     font-weight:500;
     text-transform: lowercase;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: 40px; /* Add more space above the button */
+    margin-top: 40px; 
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .vsco-button:hover {
-    background-color: #4747b8; /* Darker purple on hover for visual feedback */
-    transform: scale(1.05); /* Slight zoom effect on hover */
-}
+    background-color: #4747b8; 
+    transform: scale(1.05); 
+} */
 
-
-/* Content Section */
 /* Updated Content Section */
 .photography-content {
     width: 70%; /* Slightly reduced width for a more centered look */
