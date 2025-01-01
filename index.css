@@ -44,39 +44,35 @@ button {
   padding: 20px;
 }
 
+
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: center; /* Center-align the navbar items */
-  gap: 40px; /* Add space between links */
-  padding: 20px 0;
-  background-color: transparent; /* Remove background color */
+  justify-content: flex-start; /* Left-align the navbar */
+  padding: 20px;
 }
 
 .navbar ul {
   list-style: none;
-  display: flex;
-  gap: 40px; /* Ensure consistent spacing */
   margin: 0;
   padding: 0;
 }
 
 .navbar li {
-  font-size: 1.2rem; /* Adjust font size for better readability */
-  font-weight: normal; /* Use normal weight for lowercase text */
-  text-transform: lowercase; /* Force lowercase for text */
-  color: #000080; /* Match the navy blue color */
-  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: normal;
+  text-transform: lowercase;
 }
 
 .navbar li a {
   text-decoration: none; /* Remove underline */
-  color: #000080; /* Match the text color */
+  color: #000080; /* Navy blue color */
 }
 
 .navbar li a:hover {
-  color: #333; /* Optional: Slightly darker color on hover */
+  color: #333; /* Slightly darker on hover */
 }
+
 
 
 /* Header Section */
@@ -130,7 +126,7 @@ button {
 
 /* About Section */
 .about {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .about h2 {
@@ -147,7 +143,7 @@ button {
 
 /* Work Section */
 .work {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .work h2 {
@@ -220,12 +216,9 @@ button {
   display: inline-block;
 }
 
-
-
-/* Interests Section */
 /* Interests Section */
 .interests {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .interests h2 {
@@ -288,7 +281,7 @@ button {
 
 /* Footer Section */
 .footer {
-  margin-top: 80px;
+  margin-top: 40px;
   text-align: center;
   padding: 20px 0;
   background-color: #eaf4fc;
