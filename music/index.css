@@ -1,10 +1,10 @@
 /* General Styles */
+/*body styling*/
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #DBF4FF;
-    /* Light blue background */
+    margin: 20px;
+    padding: 30px;
+    background-color: #eaf4fc; /* Match the page background color */
     color: #333;
     /* Text color */
 }
@@ -12,36 +12,52 @@ body {
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    background-color: #f4f9ff;
+    justify-content: flex-start; /* Center-align the navbar items */
+    padding: 30px 0;
+    background-color: transparent; /* Ensure no background color */
+    margin-left: 5%;
+    margin-right: 5%
+
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 40px; /* Add spacing between links */
     margin: 0;
     padding: 0;
 }
 
 .navbar li {
-    text-transform: capitalize;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-transform: lowercase; /* Make text lowercase */
+}
+
+.navbar li a {
+    text-decoration: none; /* Remove underline */
+    color: #000080; /* Match navy blue color */
+    transition: color 0.3s ease; /* Add smooth hover effect */
+}
+
+.navbar li a:hover {
+    color: #333; /* Slightly darker color on hover */
 }
 
 /* Title Section */
 .music-header {
-    text-align: center;
-    margin-top: 50px;
+    text-align: left;
+    margin-top: 60px;
+    margin-left: 5%;
+    margin-right: 5%
+    color: #5a73d8;
 }
 
 .music-header h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #9393E4;
     /* Purple text */
+    margin-bottom: 20px;
     text-transform: lowercase;
 }
 
@@ -49,42 +65,51 @@ body {
 .music-content {
     width: 80%;
     max-width: 800px;
-    margin: 40px auto;
+    margin: 50px auto;
     background-color: #f4f9ff;
     /* Slightly lighter blue */
-    padding: 20px 30px;
+    padding: 20px 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Retain shadow for depth */
+    text-align: left;
+    line-height: 1.6;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .music-content blockquote {
     font-size: 1.2rem;
     font-style: italic;
-    margin-bottom: 20px;
+    margin-bottom: 20px 0;
     color: #555;
 }
 
 .music-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px 0;
 }
 
 .spotify-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #9393E4;
-    /* Purple button */
-    color: white;
-    font-size: 1rem;
+    display: block; /* Ensures it behaves like a block element */
+    margin: 20px auto; /* Center-aligns the button horizontally */
+    padding: 15px 30px; /* Maintain padding for better spacing */
+    background-color: #9393E4; /* Keep the purple background */
+    color: #ffffff; /* White text for contrast */
+    font-size: 1.2rem; /* Slightly larger font size */
+    font-weight: 500;
+    text-transform: lowercase;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px; /* Keep the rounded design */
     cursor: pointer;
-    text-transform: uppercase;
+    text-align: center; /* Center-align text inside the button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .spotify-button:hover {
-    background-color: #7a7ac6;
-    /* Darker purple on hover */
+    background-color: #7a7ac6; /* Slightly darker purple on hover */
+    transform: scale(1.05); /* Add a slight zoom effect on hover */
+}
+a {
+    text-decoration: none; /* Remove underline from links */
 }
