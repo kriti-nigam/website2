@@ -8,44 +8,47 @@ body {
     color: #333; /* Text color */
 }
 
-
-
-
+/* Navbar Styling */
 .navbar {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 20px 0;
+    justify-content: flex-start; /* Center-align the navbar items */
+    padding: 30px 0;
+    background-color: transparent; /* Ensure no background color */
+    margin-left: 5%;
+    margin-right: 5%
+
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 40px; /* Add spacing between links */
     margin: 0;
     padding: 0;
 }
 
-.navbar li a {
-    font-size: 1rem;
+.navbar li {
+    font-size: 1.1rem;
     font-weight: normal;
-    text-transform: lowercase;
-    text-decoration: none;
-    color: #000080; /* Navy blue color */
+    text-transform: lowercase; /* Make text lowercase */
+}
+
+.navbar li a {
+    text-decoration: none; /* Remove underline */
+    color: #000080; /* Match navy blue color */
+    transition: color 0.3s ease; /* Add smooth hover effect */
 }
 
 .navbar li a:hover {
-    color: #333; /* Slightly darker on hover */
+    color: #333; /* Slightly darker color on hover */
 }
-
-/* Header Section */
-/* Updated Photography Header */
 /* Photography Header */
 
 .photography-header {
     text-align: left; /* Align heading to the left */
     margin-top: 60px; /* Match padding to home page */
-    margin-left: 10%; /* Same left margin as home page */
+    margin-left: 5%; /* Same left margin as home page */
+    margin-right: 5%;
     color: #5a73d8; /* Keep the updated design color */
 }
 
@@ -55,89 +58,47 @@ body {
         margin-bottom: 20px;
       }
 
-/* Content Section */
-/* .photography-content {
-    width: 80%; 
-    margin: 40px auto; 
-    background-color: #dbf4ff; 
-    padding: 60px 80px; 
-    border-radius: 20px; 
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
-    text-align: left; 
-    line-height: 1.8; 
-} */
-/*}
-
-.photography-content p {
-    font-size: 1.1rem; /* Keep the text size consistent */
-    /* .photography-content {
-        width: 80%; 
-        margin: 40px auto; 
-        background-color: #dbf4ff; 
-        padding: 60px 80px; 
-        border-radius: 20px; 
-        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); 
-        text-align: left; 
-        line-height: 1.8; 
-    } */
-
-
-
-
-/* Updated Button Styling */
-/* .vsco-button {
-    display: inline-block;
-    padding: 20px 40px; 
-    background-color: #5a5ae0; 
-    color: #ffffff; 
-    font-size: 1 rem; 
-    font-weight:500;
-    text-transform: lowercase;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 40px; 
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.vsco-button:hover {
-    background-color: #4747b8; 
-    transform: scale(1.05); 
-} */
 
 /* Updated Content Section */
 .photography-content {
-    width: 70%; /* Slightly reduced width for a more centered look */
+    width: 80%; /* Slightly reduced width for a more centered look */
     margin: 50px auto; /* Add vertical space and center the content horizontally */
+    margin-left: 5%;
+    margin-right:5%;
     background-color: #f4f9ff; /* Slightly lighter card background */
-    padding: 50px 60px; /* Increased padding for better spacing inside the card */
+    padding: 20px 20px; /* Increased padding for better spacing inside the card */
     border-radius: 20px; /* Retain rounded corners */
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Retain shadow for depth */
-    text-align: center;
-    line-height: 1.8; /* Enhance readability */
+    text-align: left;
+    line-height: 1.6; /* Enhance readability */
 }
 
 .photography-content p {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-size: 1.1rem;
+    line-height: 1.6;
     margin: 20px 0;
 }
 
 .vsco-button {
-    display: inline-block;
-    padding: 15px 30px;
-    background-color: #9393E4; /* Purple button */
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: bold;
-    text-transform: uppercase;
+    display: block; /* Ensures it behaves like a block element */
+    margin: 20px auto; /* Center-aligns the button horizontally */
+    padding: 15px 30px; /* Maintain padding for better spacing */
+    background-color: #9393E4; /* Keep the purple background */
+    color: #ffffff; /* White text for contrast */
+    font-size: 1.2rem; /* Slightly larger font size */
+    font-weight: 500;
+    text-transform: lowercase;
     border: none;
-    border-radius: 30px;
+    border-radius: 30px; /* Keep the rounded design */
     cursor: pointer;
-    margin-top: 30px;
-    transition: background-color 0.3s ease;
+    text-align: center; /* Center-align text inside the button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .vsco-button:hover {
-    background-color: #7a7ac6; /* Darker purple on hover */
+    background-color: #7a7ac6; /* Slightly darker purple on hover */
+    transform: scale(1.05); /* Add a slight zoom effect on hover */
+}
+a {
+    text-decoration: none; /* Remove underline from links */
 }
