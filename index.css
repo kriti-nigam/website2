@@ -47,25 +47,37 @@ button {
 /* Navbar */
 .navbar {
   display: flex;
-  justify-content: flex-end;
-  gap: 20px;
+  justify-content: center; /* Center-align the navbar items */
+  gap: 40px; /* Add space between links */
   padding: 20px 0;
+  background-color: transparent; /* Remove background color */
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 40px; /* Ensure consistent spacing */
   margin: 0;
   padding: 0;
 }
 
 .navbar li {
+  font-size: 1.2rem; /* Adjust font size for better readability */
+  font-weight: normal; /* Use normal weight for lowercase text */
+  text-transform: lowercase; /* Force lowercase for text */
+  color: #000080; /* Match the navy blue color */
   cursor: pointer;
-  font-weight: bold;
-  color: #9393E4;
-  text-transform: capitalize;
 }
+
+.navbar li a {
+  text-decoration: none; /* Remove underline */
+  color: #000080; /* Match the text color */
+}
+
+.navbar li a:hover {
+  color: #333; /* Optional: Slightly darker color on hover */
+}
+
 
 /* Header Section */
 .header {
@@ -226,31 +238,46 @@ button {
 .interest-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  /* Responsive grid */
   gap: 20px;
 }
 
 .interest-grid div {
+  position: relative;
   text-align: center;
   background-color: #ffffff;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Subtle shadow for cards */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Ensure images fit the container proportionally */
+.interest-grid div:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
 .interest-grid img {
   margin-top: 7px;
   width: 100%;
-  /* Make image take full width of the container */
   height: 200px;
-  /* Fixed height for consistent layout */
   object-fit: cover;
-  /* Ensures image scales proportionally to fill the container */
   border-radius: 10px;
-  /* Rounded corners for images */
   margin-bottom: 10px;
+}
+
+.interest-grid a {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333; /* Matches the general text color */
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+}
+
+.interest-grid a:hover,
+.interest-grid a:visited {
+  color: #333; /* Same color for visited links */
+  text-decoration: none;
 }
 
 .interest-grid p {

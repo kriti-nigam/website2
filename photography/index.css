@@ -1,83 +1,115 @@
 /* General Styles */
+/* Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    /* Match font to your design */
-    margin: 0;
-    padding: 0;
-    background-color: #eaf4fc;
-    /* Light blue background */
-    color: #333;
-    /* Text color */
+    margin: 20px; /* Increased margin for more space around the entire page */
+    padding: 30px; /* Added padding for better spacing within the page */
+    background-color: #eaf4fc; /* Match the page background color */
+    color: #333; /* Text color */
 }
 
-/* Navbar */
+
+
+
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px 0;
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 40px;
     margin: 0;
     padding: 0;
 }
 
-.navbar li {
-    text-transform: capitalize;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
+.navbar li a {
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: lowercase;
+    text-decoration: none;
+    color: #000080; /* Navy blue color */
 }
 
-/* Title Section */
+.navbar li a:hover {
+    color: #333; /* Slightly darker on hover */
+}
+
+/* Header Section */
+/* Updated Photography Header */
 .photography-header {
     text-align: center;
-    margin-top: 50px;
-    color: #9393E4;
-    /* Purple text */
+    margin-top: 60px; /* Add more space at the top */
+    margin-bottom: 20px; /* Space between the heading and content */
+    color: #5a5ae0; /* Updated color for the heading (a softer purple) */
 }
 
 .photography-header h1 {
-    font-size: 4rem;
+    font-size: 5rem;
+    font-weight: 700;
     text-transform: lowercase;
+    margin: 0;
 }
 
-/* Content Section */
-.photography-content {
-    width: 80%;
-    max-width: 800px;
-    margin: 40px auto;
-    background-color: #f4f9ff;
-    /* Slightly lighter blue for the card */
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.photography-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin: 15px 0;
-}
-
+/* Updated Button Styling */
 .vsco-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #9393E4;
-    /* Purple button */
-    color: white;
-    font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    display: inline-block;
+    padding: 20px 40px; /* Increased padding for better spacing */
+    background-color: #5a5ae0; /* Updated button color to match the new heading color */
+    color: #ffffff; /* Ensure contrast with the button background */
+    font-size: 1.2rem; /* Slightly larger font size for better readability */
+    font-weight: bold;
     text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 40px; /* Add more space above the button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .vsco-button:hover {
-    background-color: #7a7ac6;
-    /* Darker purple for hover */
+    background-color: #4747b8; /* Darker purple on hover for visual feedback */
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+
+/* Content Section */
+/* Updated Content Section */
+.photography-content {
+    width: 70%; /* Slightly reduced width for a more centered look */
+    margin: 50px auto; /* Add vertical space and center the content horizontally */
+    background-color: #f4f9ff; /* Slightly lighter card background */
+    padding: 50px 60px; /* Increased padding for better spacing inside the card */
+    border-radius: 20px; /* Retain rounded corners */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Retain shadow for depth */
+    text-align: center;
+    line-height: 1.8; /* Enhance readability */
+}
+
+.photography-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.vsco-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #9393E4; /* Purple button */
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.vsco-button:hover {
+    background-color: #7a7ac6; /* Darker purple on hover */
 }
