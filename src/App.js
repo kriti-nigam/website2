@@ -121,10 +121,12 @@ export default function App() {
           if you want to stay in touch, here’s how you can reach out:
         </p>
         <div className="social-icons">
-          <a href="https://www.linkedin.com/in/kriti-nigam-34549a185/" target="_blank" rel="noopener noreferrer">
+          <a 
+          href="https://www.linkedin.com/in/kriti-nigam-34549a185/" target="_blank" rel="noopener noreferrer">
             <img src="linkedin.png" alt="LinkedIn" />
           </a>
-          <a href="https://x.com/KritiNigam4" target="_blank" rel="noopener noreferrer">
+          <a 
+          href="https://x.com/KritiNigam4" target="_blank" rel="noopener noreferrer">
             <img src="twitter.png" alt="Twitter" />
           </a>
           <a href="mailto:kritinigam3299@gmail.com">
