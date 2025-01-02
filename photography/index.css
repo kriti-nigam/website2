@@ -61,7 +61,7 @@ body {
 
 /* Updated Content Section */
 .photography-content {
-    width: 80%; /* Slightly reduced width for a more centered look */
+    width: 90%; /* Slightly reduced width for a more centered look */
     max-width: 800px;
     margin: 50px auto; /* Add vertical space and center the content horizontally */
     margin-left: 5%;
