@@ -62,12 +62,12 @@ body {
 /* Updated Content Section */
 .photography-content {
     width: 90%; /* Slightly reduced width for a more centered look */
-    max-width: 800px;
-    margin: 50px auto; /* Add vertical space and center the content horizontally */
+    max-width: 1000px;
+    margin: 20px auto; /* Add vertical space and center the content horizontally */
     margin-left: 5%;
     margin-right:5%;
     background-color: #f4f9ff; /* Slightly lighter card background */
-    padding: 20px 20px; /* Increased padding for better spacing inside the card */
+    padding: 10px 10px; /* Increased padding for better spacing inside the card */
     border-radius: 20px; /* Retain rounded corners */
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Retain shadow for depth */
     text-align: left;
