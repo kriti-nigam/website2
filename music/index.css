@@ -35,7 +35,7 @@ body {
 }
 
 .navbar li a {
-    text-decoration: none; /* Remove underline */
+    text-decoration: none;
     color: #000080; /* Match navy blue color */
     transition: color 0.3s ease; /* Add smooth hover effect */
 }
