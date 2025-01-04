@@ -1,8 +1,8 @@
 /* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 20px;
+    padding: 30px;
     background-color: #eaf4fc;
     /* Light blue background */
     color: #333;
@@ -12,55 +12,74 @@ body {
 /* Navbar */
 .navbar {
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    background-color: #f4f9ff;
+    justify-content: flex-start; /* Center-align the navbar items */
+    padding: 30px 0;
+    background-color: transparent; /* Ensure no background color */
+    margin-left: 5%;
+    margin-right: 5%
+
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 40px; /* Add spacing between links */
     margin: 0;
     padding: 0;
 }
 
 .navbar li {
-    text-transform: capitalize;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-transform: lowercase; /* Make text lowercase */
+}
+
+.navbar li a {
+    text-decoration: none; /* Remove underline */
+    color: #000080; /* Match navy blue color */
+    transition: color 0.3s ease; /* Add smooth hover effect */
+}
+
+.navbar li a:hover {
+    color: #333; /* Slightly darker color on hover */
 }
 
 /* Title Section */
 .reading-header {
-    text-align: center;
-    margin-top: 50px;
+    text-align: left; /* Align heading to the left */
+    margin-top: 60px; /* Match padding to home page */
+    margin-left: 5%; /* Same left margin as home page */
+    margin-right: 5%;
+    color: #5a73d8; /* Keep the updated design color */
 }
 
 .reading-header h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #9393E4;
     /* Purple text */
     text-transform: lowercase;
+    margin-bottom: 20px;
 }
 
 /* Content Section */
 .reading-content {
-    width: 80%;
-    max-width: 800px;
-    margin: 40px auto;
-    background-color: #f4f9ff;
-    /* Slightly lighter blue */
-    padding: 20px 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Slightly reduced width for a more centered look */
+    max-width: 1000px;
+    margin: 20px auto; /* Add vertical space and center the content horizontally */
+    margin-left: 5%;
+    margin-right:5%;
+    background-color: #f4f9ff; /* Slightly lighter card background */
+    padding: 20px 20px; /* Increased padding for better spacing inside the card */
+    border-radius: 20px; /* Retain rounded corners */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Retain shadow for depth */
+    text-align: left;
+    line-height: 1.6; /* Enhance readability */
 }
 
 .reading-content p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 20px;
 }
 
 .reading-content ol {

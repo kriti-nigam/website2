@@ -42,8 +42,8 @@ body {
 .navbar li a:hover {
     color: #333; /* Slightly darker color on hover */
 }
-/* Photography Header */
 
+/* Photography Header */
 .photography-header {
     text-align: left; /* Align heading to the left */
     margin-top: 60px; /* Match padding to home page */
