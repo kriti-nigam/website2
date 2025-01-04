@@ -91,7 +91,7 @@ button {
   font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 10px;
-  text-transform: none;
+  text-transform: lowercase;
   /* Ensure text is not in uppercase */
 }
 
