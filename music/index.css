@@ -13,7 +13,7 @@ body {
 .navbar {
     display: flex;
     justify-content: flex-start; /* Center-align the navbar items */
-    padding: 30px 0;
+    padding: 10px 0;
     background-color: transparent; /* Ensure no background color */
     margin-left: 5%;
     margin-right: 5%
@@ -44,10 +44,11 @@ body {
     color: #333; /* Slightly darker color on hover */
 }
 
-/* Title Section */
+/* Music Header */
+
 .music-header {
     text-align: left;
-    margin-top: 60px;
+    margin-top: 20px;
     margin-left: 5%;
     margin-right: 5%;
     color: #5a73d8; /* Keep the updated design color */
@@ -56,19 +57,18 @@ body {
 .music-header h1 {
     font-size: 2.5rem;
     color: #9393E4;
-    /* Purple text */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-transform: lowercase;
 }
 
 /* Content Section */
 .music-content {
     width: 90%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 20px auto;
     background-color: #f4f9ff;
     /* Slightly lighter blue */
-    padding: 10px 20px;
+    padding: 20px 20px;
     border-radius: 20px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Retain shadow for depth */
     text-align: left;
