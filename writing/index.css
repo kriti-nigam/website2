@@ -1,4 +1,5 @@
 /* General Styles */
+/* Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 20px; /* Increased margin for more space around the entire page */
@@ -7,20 +8,21 @@ body {
     color: #333; /* Text color */
 }
 
-/* Navbar */
+/* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: flex-start; /* Center-align the navbar items */
-    padding: 30px 0;
+    padding: 10px 0;
     background-color: transparent; /* Ensure no background color */
     margin-left: 5%;
     margin-right: 5%
+
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 40px;
+    gap: 40px; /* Add spacing between links */
     margin: 0;
     padding: 0;
 }
@@ -30,39 +32,39 @@ body {
     font-weight: normal;
     text-transform: lowercase; /* Make text lowercase */
 }
+
 .navbar li a {
-    text-decoration: none;
+    text-decoration: none; /* Remove underline */
     color: #000080; /* Match navy blue color */
     transition: color 0.3s ease; /* Add smooth hover effect */
 }
+
 .navbar li a:hover {
     color: #333; /* Slightly darker color on hover */
 }
 
-/* Writing header */
+/* Photography Header */
 
-.reading-header {
+.writing-header {
     text-align: left; /* Align heading to the left */
-    margin-top: 60px; /* Match padding to home page */
+    margin-top: 20px; /* Match padding to home page */
     margin-left: 5%; /* Same left margin as home page */
     margin-right: 5%;
     color: #5a73d8; /* Keep the updated design color */
 }
 
-.reading-header h1 {
-    font-size: 2.5rem;
-    color: #9393E4;
-    /* Purple text */
-    text-transform: lowercase;
-     margin-bottom: 20px;
-}
+.writing-header h1 {
+        font-size: 2.5rem;
+        color: #9393E4;
+        margin-bottom: 10px;
+      }
 
-/* Content Section */
-.reading-content {
+/*Content Section */
+.writing-content {
     width: 90%; /* Slightly reduced width for a more centered look */
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 20px auto; /* Add vertical space and center the content horizontally */
-    margin-left: 5%;
+    margin-left: 5%; /* Same left margin as home page */
     margin-right:5%;
     background-color: #f4f9ff; /* Slightly lighter card background */
     padding: 20px 20px; /* Increased padding for better spacing inside the card */
@@ -72,19 +74,8 @@ body {
     line-height: 1.6; /* Enhance readability */
 }
 
-.reading-content p {
+.writing-content p {
     font-size: 1.1rem;
     line-height: 1.6;
-    margin-bottom: 20px 0;
-}
-
-.reading-content ol {
-    margin-top: 20px;
-    padding-left: 20px;
-    font-size: 1rem;
-}
-
-.reading-content ol li {
-    margin-bottom: 10px;
-    line-height: 1.6;
+    margin: 20px 0;
 }
