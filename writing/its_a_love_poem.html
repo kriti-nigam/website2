@@ -4,104 +4,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="../index.css" />
   <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <title>kriti</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>its a love poem - kriti</title>
 </head>
-<body>
-    <div class="reading-container">
-        <nav class="navbar">
-          <ul>
-            <li><a href="/">home</a></li>
-    
-          </ul>
-        </nav>
-        </div>
-  
-      <header class="writing-header">
-        <h1>its a love poem.</h1>
-      </header>
-  
-      <div class="writing-content">
-        <p>
-            In the recess of vanilla twilight, the warmth of <br>
-            
-            Honesty. The soft folds of her skin against <br>
-            his shaggy beard. The glimpse of a peaceful, <br>
-            
-            snoring face in the matrix of chaos. Unwinding <br>
-            
-            to Porcupine Tree and semi-burned pancakes <br>
-            
-            making a jester of time, time mingled with <br>
-            
-            two hearts and unseeming innocent <br>
-            
-            laughters, laughters that dissolved into <br>
-            
-            kisses like the dawn breaks into <br>
-            
-            the day, days seemed infinite until <br>
-            
-            the night took over, nights spent pondering <br>
-            
-            the delicate details of his beautiful face; <br>
-            
-            the razor cuts, the botched pimples, <br>
-            
-            the mysterious marks, the chewed nails <br>
-            
-            all seemed to flow <br>
-            
-            into perfect harmony like Bach’s symphony <br><br>
-            
-            breakfasts that lasted till noon, and the break <br>
-            
-            of sunlight was unbidden by these two nascent <br>
-            
-            souls, who found their recuse from life <br>
-            
-            in each other. Head massages with the breath <br>
-            
-            of freshly bloomed flowers as they sat <br>
-           
-            and gazed at the inebriating sunsets, <br>
-           
-            catching a breath as the other made <br>
-            
-            a silly excuse to spend more time, <br>
-            
-            time was an outlaw, uniting <br>
-            
-            and separating them. <br>
-            <br>
 
-            each lay their life bare; <br>
-            
-            childhood stories to traumatic teen <br>
-            
-            she thought she got closer <br>
-           
-            to that canvas of incomplete picture <br>
-           
-            as she nibbled on the chocolate cookie <br>
-           
-            while he narrated tales from his travels; <br>
-            
-            long and far and played his hearty guitar; <br>
-            
-            elated as he sang his dearest songs <br> <br>
-            
-            They built that dream together <br>
-            
-            Unhindered by the flaws in each other <br>
-            
-            That dream, a requiem of their love <br>
-            
-            That dream, an epitaph of their love.
-</div>
+<body>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../">home</a></li>
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../writing/">writing</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <a href="../writing/">writing</a>
+      <span>→</span>
+      <span>its a love poem</span>
+    </nav>
+
+    <!-- Clean Header -->
+    <header class="page-header">
+      <h1>its a love poem.</h1>
+    </header>
+
+    <!-- Poetry Content -->
+    <section class="poetry-content">
+      <p>In the recess of vanilla twilight, the warmth of 
+
+Honesty. The soft folds of her skin against 
+his shaggy beard. The glimpse of a peaceful, 
+
+snoring face in the matrix of chaos. Unwinding 
+
+to Porcupine Tree and semi-burned pancakes 
+
+making a jester of time, time mingled with 
+
+two hearts and unseeming innocent 
+
+laughters, laughters that dissolved into 
+
+kisses like the dawn breaks into 
+
+the day, days seemed infinite until 
+
+the night took over, nights spent pondering 
+
+the delicate details of his beautiful face; 
+
+the razor cuts, the botched pimples, 
+
+the mysterious marks, the chewed nails 
+
+all seemed to flow 
+
+into perfect harmony like Bach's symphony 
+
+breakfasts that lasted till noon, and the break 
+
+of sunlight was unbidden by these two nascent 
+
+souls, who found their recuse from life 
+
+in each other. Head massages with the breath 
+
+of freshly bloomed flowers as they sat 
+
+and gazed at the inebriating sunsets, 
+
+catching a breath as the other made 
+
+a silly excuse to spend more time, 
+
+time was an outlaw, uniting 
+
+and separating them. 
+
+
+each lay their life bare; 
+
+childhood stories to traumatic teen 
+
+she thought she got closer 
+
+to that canvas of incomplete picture 
+
+as she nibbled on the chocolate cookie 
+
+while he narrated tales from his travels; 
+
+long and far and played his hearty guitar; 
+
+elated as he sang his dearest songs 
+
+They built that dream together 
+
+Unhindered by the flaws in each other 
+
+That dream, a requiem of their love 
+
+That dream, an epitaph of their love.</p>
+    </section>
+
+    <div class="button-center">
+      <a href="../writing/" class="secondary-button">back to writing</a>
+    </div>
+  </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.poetry-content').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
