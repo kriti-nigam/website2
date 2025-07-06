@@ -10,44 +10,61 @@
 </head>
 
 <body>
-  <div class="container">
-
-    <!-- <nav class="navbar">
-      <ul>
-      <li>
-        <a href="#">home</a>
-      </li>
-      </ul>
-    </nav> -->
-
-
-
-    <header class="header">
-      <div class="intro">
-        <h1>
-          hello, I'm Kriti, a <br /> <span class="highlight">product manager</span>
-        </h1>
-        <p>based in Bangalore.</p>
-
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="#" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#work">work</a></li>
+          <li><a href="#interests">interests</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <div class="profile-pic">
-        <img src="assets/profile.jpg" alt="Profile" />
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Header Section -->
+    <header class="header" id="home">
+      <div class="header-content">
+        <div class="intro">
+          <h1>
+            hello, I'm Kriti, a <br /> <span class="highlight">product manager</span>
+          </h1>
+          <p>based in Bangalore, crafting digital experiences and building meaningful products.</p>
+          <a href="#about" class="cta-button">learn more about me</a>
+        </div>
+        <div class="profile-pic">
+          <img src="assets/profile.jpg" alt="Kriti's Profile" />
+        </div>
       </div>
     </header>
 
-    <section class="about" style="text-transform: lowercase;" id="about">
+    <!-- About Section -->
+    <section class="section" id="about">
       <h2>about.</h2>
       <p>
         if I have to be honest with you, i've never found intros easy—like how do i
         capture the whole essence of my being in a few words? But let's see how i
         fare out.
-        <br />
+      </p>
+      <p>
         i write PRDs for a living, work out for mental health, read books for
         sanity, and click pictures for fun. boring? maybe.
       </p>
-      <p>for the last 8 months, I’ve been helping grow my mother’s small business, Neerakriti, an artisanal Indian home decor brand. I’m doing this in my part time and helping her set up things from scratch. the thrill of 0 → 1!!</p>    </section>
+      <p>for the last 8 months, I've been helping grow my mother's small business, Neerakriti, an artisanal Indian home decor brand. I'm doing this in my part time and helping her set up things from scratch. the thrill of 0 → 1!!</p>
+    </section>
 
-    <section class="work" id="work">
+    <!-- Work Section -->
+    <section class="section" id="work">
       <h2>work.</h2>
       <p>
         i've been in product for ~4 years now, straight out of college and have
@@ -56,93 +73,82 @@
       </p>
       <p>
         i enjoy the generalist nature of my work – helps me navigate chaos, although in the initial years, it was a bit
-        daunting. i have a background in CSE and as part of my bachelor’s curriculum, we were expected to do a semester
-        as an internship – that’s when i stumbled upon Proactive, and i haven’t looked back since.
+        daunting. i have a background in CSE and as part of my bachelor's curriculum, we were expected to do a semester
+        as an internship – that's when i stumbled upon Proactive, and i haven't looked back since.
       </p>
-      <div class="work-item">
-        <div class="work-left">
-          <p><strong>Aug’24 - present</strong></p>
+      
+      <div class="work-grid">
+        <div class="work-item">
+          <div class="work-period">Aug'24 - present</div>
+          <div class="work-company">web.com</div>
+          <div class="work-description">learning about domains and web hosting, managing p&l for domains across the SEA brands.</div>
         </div>
-        <div class="work-right">
-          <p><strong>web.com</strong></p>
-          <p>learning about domains and web hosting, managing p&l for domains across the SEA brands.</p>
+        
+        <div class="work-item">
+          <div class="work-period">May'24 - present</div>
+          <div class="work-company">Neerakriti</div>
+          <div class="work-description">promoting Indian home decor and helping my mum find an alternate career.</div>
         </div>
-      </div>
-      <div class="work-item">
-        <div class="work-left">
-          <p><strong>May’24 - present</strong></p>
+        
+        <div class="work-item">
+          <div class="work-period">2023 - 2024</div>
+          <div class="work-company">IG Group</div>
+          <div class="work-description">learned about leveraged trading, managing asymmetric credit risk. built muscle for working at scale (mn+). was also looking for a man in finance, trust fund...</div>
         </div>
-        <div class="work-right">
-          <p><strong>Neerakriti</strong></p>
-          <p>promoting Indian home decor and helping my mum find an alternate career.</p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div class="work-left">
-          <p><strong>2023 - 2024</strong></p>
-        </div>
-        <div class="work-right">
-          <p><strong>IG Group</strong></p>
-          <p>learned about leveraged trading, managing asymmetric credit risk. built muscle for working at scale (mn+). was also looking for a 
-            man in finance, trust fund...
-          </p>
-        </div>
-      </div>
-      <div class="work-item">
-        <div class="work-left">
-          <p><strong>2021 - 2023</strong></p>
-        </div>
-        <div class="work-right">
-          <p><strong>Proactive For Her</strong></p>
-          <p>started my professional stint with an early-stage startup, learned everything here. built an MVP, scaled
-            it, raised series A, and saw users grow from 3/month to 5000/month.</p>
+        
+        <div class="work-item">
+          <div class="work-period">2021 - 2023</div>
+          <div class="work-company">Proactive For Her</div>
+          <div class="work-description">started my professional stint with an early-stage startup, learned everything here. built an MVP, scaled it, raised series A, and saw users grow from 3/month to 5000/month.</div>
         </div>
       </div>
     </section>
 
-
-
-    <section class="interests" id="interests">
-
+    <!-- Interests Section -->
+    <section class="section" id="interests">
       <h2>interests.</h2>
-      <p>now i happen to be a woman of multiple interests, so bear with me in this section <i>rolls up her sleeves</i> some of them are more seasoned and i’ve been at them for a while, some are more recent and possibly an outcome of living away from friends and family. i’ve been away from home for about 3 years and its taught me a few things. so after some navigation, i’ve expanded my interests. they now include exercising regularly, trying to perfect my mum’s chicken curry recipe and the occasional binge watching.<br> <br> below are some of my more long-standing interests- <br></p>
+      <p>now i happen to be a woman of multiple interests, so bear with me in this section <i>rolls up her sleeves</i> some of them are more seasoned and i've been at them for a while, some are more recent and possibly an outcome of living away from friends and family. i've been away from home for about 3 years and its taught me a few things. so after some navigation, i've expanded my interests. they now include exercising regularly, trying to perfect my mum's chicken curry recipe and the occasional binge watching.</p>
+      <p>below are some of my more long-standing interests-</p>
+      
       <div class="interest-grid">
-        <div>
-          <a href="/writing">
-            writing
-            <img src="assets/writing.jpg" alt="Interest-Writing" />
-          </a>
+        <div class="interest-card">
+          <img src="assets/writing.jpg" alt="Writing" />
+          <div class="interest-content">
+            <a href="writing/">writing</a>
+          </div>
         </div>
-        <div>
-          <a href="/photography">
-            photography
-            <img src="assets/photography.jpg" alt="Interest-Photography" />
-          </a>
+        
+        <div class="interest-card">
+          <img src="assets/photography.jpg" alt="Photography" />
+          <div class="interest-content">
+            <a href="photography/">photography</a>
+          </div>
         </div>
-
-        <div>
-          <a href="/reading">
-            reading
-            <img src="assets/reading.jpeg" alt="Interest-Reading" />
-          </a>
+        
+        <div class="interest-card">
+          <img src="assets/reading.jpeg" alt="Reading" />
+          <div class="interest-content">
+            <a href="reading/">reading</a>
+          </div>
         </div>
-
-        <div>
-          <a href="/music">
-            music
-            <img src="assets/music.jpg" alt="Interest-Music" />
-          </a>
+        
+        <div class="interest-card">
+          <img src="assets/music.jpg" alt="Music" />
+          <div class="interest-content">
+            <a href="music/">music</a>
+          </div>
         </div>
-
       </div>
     </section>
+  </div>
 
-
-    <footer class="footer">
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container">
       <h2>stay in touch.</h2>
       <p>
         thank you for stopping by and reading. fun fact: all pictures used here have been clicked by me :)<br>
-        if you want to stay in touch, here’s how you can reach out:
+        if you want to stay in touch, here's how you can reach out:
       </p>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/kriti-nigam-34549a185/" target="_blank" rel="noopener noreferrer">
@@ -155,8 +161,72 @@
           <img src="assets/email.png" alt="Email" />
         </a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for animations
+    document.querySelectorAll('.section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(30px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
