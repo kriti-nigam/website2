@@ -1,54 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="../index.css" /> 
-    <link rel="stylesheet" href="index.css" />
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <title>kriti</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>photography - kriti</title>
 </head>
+
 <body>
-    <div class="photography-container">
-        <nav class="navbar">
-          <ul>
-            <li><a href="/">home</a></li>
-        
-          </ul>
-        </nav>
-  
-        <header class="photography-header">
-          <h1>photography.</h1>
-        </header>
-  
-        <div class="photography-content">
-          <p>
-            this is a funny one! this wasn’t one of those things I discovered as a
-            child or even aspired to do. but one day, it just clicked (pun intended).
-          </p>
-          <p>
-            i was a fresher in college and had a cheap phone with a low
-            quality camera, I think it was a redmi 4A. but our college blessed us
-            with some of the best sunsets and I would instinctively, take my phone
-            out to capture a glimpse of it, always knowing I would never do justice
-            to the reality.
-          </p>
-          <p>
-            but I enjoyed it a lot - like it brought me a sense of joy very
-            inexplicable and very genuine in nature. soon after, I also started
-            editing my pictures on vsco and that hasn’t stopped. i haven’t taken this
-            seriously - all pictures i’ve clicked are things i’ve liked witnessing
-            with my eyes.
-          </p>
-          <p>
-            i’ve largely captured pictures with my phone (s) and only recently was
-            gifted a 35mm. if you want to check out some of my pictures, below is the link to my vsco
-          
-          <a href="https://vsco.co/kriti3/gallery" target="_blank" rel="noopener noreferrer">
-          <button class="vsco-button">vsco</button>
-          </a>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../">home</a></li>
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../photography/" class="active">photography</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <span>photography</span>
+    </nav>
+
+    <!-- Clean Header -->
+    <header class="page-header">
+      <h1>photography.</h1>
+      <p>capturing moments that speak to the soul</p>
+    </header>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <p>
+        this is a funny one! this wasn't one of those things I discovered as a
+        child or even aspired to do. but one day, it just clicked (pun intended).
+      </p>
+      <p>
+        i was a fresher in college and had a cheap phone with a low
+        quality camera, I think it was a redmi 4A. but our college blessed us
+        with some of the best sunsets and I would instinctively, take my phone
+        out to capture a glimpse of it, always knowing I would never do justice
+        to the reality.
+      </p>
+      <p>
+        but I enjoyed it a lot - like it brought me a sense of joy very
+        inexplicable and very genuine in nature. soon after, I also started
+        editing my pictures on vsco and that hasn't stopped. i haven't taken this
+        seriously - all pictures i've clicked are things i've liked witnessing
+        with my eyes.
+      </p>
+      <p>
+        i've largely captured pictures with my phone (s) and only recently was
+        gifted a 35mm. if you want to check out some of my pictures, below is the link to my vsco.
+      </p>
+      
+      <div class="button-center">
+        <a href="https://vsco.co/kriti3/gallery" target="_blank" rel="noopener noreferrer" class="primary-button">
+          view my vsco
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animations
+    document.querySelectorAll('.content-section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
+
 </html>
