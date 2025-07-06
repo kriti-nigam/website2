@@ -4,70 +4,168 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="../index.css" />
   <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <title>kriti</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>getaway car - kriti</title>
 </head>
+
 <body>
-    <div class="reading-container">
-        <nav class="navbar">
-          <ul>
-            <li><a href="/">home</a></li>
-    
-          </ul>
-        </nav>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../">home</a></li>
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../writing/">writing</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-  
-      <header class="writing-header">
-        <h1>getaway car.</h1>
-      </header>
-  
-      <div class="writing-content">
-        <p>
-            <p>
-                With the sun setting behind us and city lights below us,<br>
-                The air around me grew dense as it mixed<br>
-                With your lust as you blew out that last puff.<br>
-                My breathing grew heavy as my vision got blurry<br>
-                Fixated on you as you stood up and leaned in closer<br>
-                You knew, didn’t you?<br><br>
+      </div>
+    </div>
+  </nav>
 
-                When our lips brushed against each other,<br>
-                The unfathomed distance between us floated by<br>
-                Fading far away from the chains of reality<br>
-                That broke with each stride you took towards me.<br>
-                You knew, didn’t you?<br><br>
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <a href="../writing/">writing</a>
+      <span>→</span>
+      <span>getaway car</span>
+    </nav>
 
-                Your hands ran down my body<br>
-                Claiming their trophy, my body your prize<br>
-                My heart, your prisoner.<br>
-                But long before your touch, your gaze<br>
-                Had already corrupted its way inside my breast.<br>
-                But you knew, didn’t you?<br><br>
+    <!-- Clean Header -->
+    <header class="page-header">
+      <h1>getaway car.</h1>
+    </header>
 
-                As your tongue tasted mine<br>
-                It grew a liking to that warmth.<br>
-                That warmth fuelled by my pain and your fears<br>
-                Soon plummeted into a fire<br>
-                Now burning with your pain and my fears.<br>
-                But you knew, didn’t you?<br><br>
+    <!-- Poetry Content -->
+    <section class="poetry-content">
+      <p>With the sun setting behind us and city lights below us,
+The air around me grew dense as it mixed
+With your lust as you blew out that last puff.
+My breathing grew heavy as my vision got blurry
+Fixated on you as you stood up and leaned in closer
+You knew, didn't you?
 
-                You knew this fire wouldn’t extinguish<br>
-                Yet you kept it burning<br>
-                With the same old fears, the same old tears.<br>
-                Only to be tamed by our agony and misery<br>
-                But you left, leaving me with my burning carcass<br>
-                Because you knew, didn’t you?<br><br>
-                
-                My burning body still covered in our debris.<br>
-                They told me to hate you but how could I?<br>
-                When the only love I had known was to hate myself<br>
-                I knew I pushed you away, as my unfounded wrath<br>
-                Became the keys to your getaway car.
-            </p>
-</div>
+When our lips brushed against each other,
+The unfathomed distance between us floated by
+Fading far away from the chains of reality
+That broke with each stride you took towards me.
+You knew, didn't you?
+
+Your hands ran down my body
+Claiming their trophy, my body your prize
+My heart, your prisoner.
+But long before your touch, your gaze
+Had already corrupted its way inside my breast.
+But you knew, didn't you?
+
+As your tongue tasted mine
+It grew a liking to that warmth.
+That warmth fuelled by my pain and your fears
+Soon plummeted into a fire
+Now burning with your pain and my fears.
+But you knew, didn't you?
+
+You knew this fire wouldn't extinguish
+Yet you kept it burning
+With the same old fears, the same old tears.
+Only to be tamed by our agony and misery
+But you left, leaving me with my burning carcass
+Because you knew, didn't you?
+
+My burning body still covered in our debris.
+They told me to hate you but how could I?
+When the only love I had known was to hate myself
+I knew I pushed you away, as my unfounded wrath
+Became the keys to your getaway car.</p>
+    </section>
+
+    <div class="button-center">
+      <a href="../writing/" class="secondary-button">back to writing</a>
+    </div>
+  </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.poetry-content').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
