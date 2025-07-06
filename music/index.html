@@ -4,46 +4,144 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="../index.css" />
   <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <title>kriti</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>music - kriti</title>
 </head>
 
 <body>
-  <div class="music-container">
-    <nav class="navbar">
-      <ul>
-        <li><a href="/">home</a></li>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../">home</a></li>
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../music/" class="active">music</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-      </ul>
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <span>music</span>
     </nav>
 
-    <header class="music-header">
+    <!-- Clean Header -->
+    <header class="page-header">
       <h1>music.</h1>
+      <p>how i decorate time</p>
     </header>
 
-    <div class="music-content">
+    <!-- Main Content -->
+    <section class="content-section">
       <p>
-        <i>“art is how we decorate space, music is how we decorate time.” - jean-michel basquiat</i><br><br>
-         music has always been very very dear to me. music is the language of the soul. my parents had a rich
-        influence
-        on my music taste so i grew up listening to bryan adams, the carpenters, eric clapton, vengaboys, rd
-        burman and
-        kishore kumar. i’m not a singer and i once tried to learn drums (my favorite instrument) in uni but then
-        covid struck :( and that’s been on pause since
+        <i>"art is how we decorate space, music is how we decorate time." - jean-michel basquiat</i>
       </p>
       <p>
-        however, my spotify is a digital footprint that i’m proud of. you can check out my playlists on spotify.
+        music has always been very very dear to me. music is the language of the soul. my parents had a rich
+        influence on my music taste so i grew up listening to bryan adams, the carpenters, eric clapton, vengaboys, rd
+        burman and kishore kumar. i'm not a singer and i once tried to learn drums (my favorite instrument) in uni but then
+        covid struck :( and that's been on pause since.
       </p>
-      <a href="https://open.spotify.com/user/7d1encj3mfbvejh7s2098x3z8?nd=1&dlsi=44721ca5ca514bef" target="_blank"
-        rel="noopener noreferrer">
-        <button class="spotify-button">spotify</button>
-      </a>
-    </div>
-
+      <p>
+        however, my spotify is a digital footprint that i'm proud of. you can check out my playlists on spotify.
+      </p>
+      
+      <div class="button-center">
+        <a href="https://open.spotify.com/user/7d1encj3mfbvejh7s2098x3z8?nd=1&dlsi=44721ca5ca514bef" target="_blank" rel="noopener noreferrer" class="primary-button">
+          explore my spotify
+        </a>
+      </div>
+    </section>
   </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animations
+    document.querySelectorAll('.content-section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
