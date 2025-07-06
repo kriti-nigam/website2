@@ -4,43 +4,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="stylesheet" href="../index.css" />
   <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <title>kriti</title>
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>writing - kriti</title>
 </head>
 
 <body>
-  <div class="writing-container">
-    <nav class="navbar">
-      <ul>
-        <li><a href="/">home</a></li>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../">home</a></li>
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../writing/" class="active">writing</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-      </ul>
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <span>writing</span>
     </nav>
 
-    <header class="writing-header">
+    <!-- Clean Header -->
+    <header class="page-header">
       <h1>writing.</h1>
+      <p>thoughts, musings, and creative expressions from my journey</p>
     </header>
 
-    <div class="writing-content">
+    <!-- Main Content -->
+    <section class="content-section">
       <p>
-        this section remains a work in progress. i used to write a lot more than i do now, but after some nervous system regulation & the development of my prefrontal cortex, i’m still finding my new voice.<br>
-        <p>but here’s a few random scribblings i’ve written over the years.
+        this section remains a work in progress. i used to write a lot more than i do now, but after some nervous system regulation & the development of my prefrontal cortex, i'm still finding my new voice.
+      </p>
+      <p>
+        writing has always been my way of processing the world around me. from late-night poetry sessions in college to reflective essays about life's complexities, words have been my constant companion through growth, heartbreak, and discovery.
+      </p>
+      <p>
+        but here's a few random scribblings i've written over the years.
+      </p>
+    </section>
 
-        </p>  
+    <!-- Writing Pieces -->
+    <section class="writing-section">
+      <h2 class="section-title">recent pieces</h2>
+      <div class="writing-grid">
+        <article class="writing-item" style="--i: 1">
+          <h3>mum</h3>
+          <p>A heartfelt tribute exploring love, loss, and the complex emotions that come with grief. Raw and honest, this piece delves into the unspoken words we carry.</p>
+          <a href="mum.html">read piece</a>
+        </article>
         
-
-      <ol>
-        <li style="text-decoration: none;"><a href="mum.html">mum</a></li> 
-        <li style="text-decoration: none;"><a href="its_a_love_poem.html">its a love poem</a></li>
-        <li style="text-decoration: none;"><a href="getaway_car.html">getaway car</a></li>
-        <li style="text-decoration: none;"><a href="futile_devices.html">futile devices</a></li>
-      </ol>
-    </div>
-
+        <article class="writing-item" style="--i: 2">
+          <h3>its a love poem</h3>
+          <p>An intimate portrayal of love in its purest form - capturing those quiet moments that make relationships sacred. Written during a time of deep connection.</p>
+          <a href="its_a_love_poem.html">read piece</a>
+        </article>
+        
+        <article class="writing-item" style="--i: 3">
+          <h3>getaway car</h3>
+          <p>A passionate exploration of desire and escape - this piece captures the intensity of forbidden attraction and the chaos that follows when hearts collide.</p>
+          <a href="getaway_car.html">read piece</a>
+        </article>
+        
+        <article class="writing-item" style="--i: 4">
+          <h3>futile devices</h3>
+          <p>A contemplative piece about growing up, understanding life's complexities, and the beautiful futility of trying to make sense of our existence.</p>
+          <a href="futile_devices.html">read piece</a>
+        </article>
+      </div>
+    </section>
   </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for staggered animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animations
+    document.querySelectorAll('.content-section, .writing-section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Staggered animation for writing items
+    document.querySelectorAll('.writing-item').forEach((item, index) => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateY(16px)';
+      item.style.transition = 'all 0.4s ease';
+      
+      setTimeout(() => {
+        if (item.getBoundingClientRect().top < window.innerHeight) {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }
+      }, (index + 1) * 100);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 
 </html>
