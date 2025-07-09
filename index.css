@@ -307,17 +307,22 @@ html {
   text-align: center;
 }
 
-.interest-card a {
-  text-decoration: none;
-  color: #1F2937;
-  font-weight: 500;
-  font-size: 18px;
-  transition: color 0.2s ease;
-}
+ .interest-card a {
+     display: block;
+     text-decoration: none;
+     color: #1F2937;
+     transition: color 0.2s ease;
+   }
 
-.interest-card:hover a {
-  color: #6B46C1;
-}
+   .interest-card span {
+       font-weight: 500;
+       font-size: 18px;
+       transition: color 0.2s ease;
+     }
+
+    .interest-card:hover a {
+      color: #6B46C1;
+    }
 
 /* Footer - Cleaner design */
 .footer {
