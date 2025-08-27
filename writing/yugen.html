@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>yugen - kriti</title>
+</head>
+
+<body>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../#home" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../writing/">writing</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <a href="../writing/">writing</a>
+      <span>→</span>
+      <span>yugen</span>
+    </nav>
+
+    <!-- Clean Header -->
+    <header class="page-header">
+      <h1>yugen.</h1>
+    </header>
+
+    <!-- Poetry Content -->
+    <section class="poetry-content">
+      <p>“How did we become so arrogant?”, she deliberated with herself over a cup of fresh, warm brew. It was 4:12 in the morning and the breaking of the day was announced by the distant chirping of the birds. She sat down with that cup of coffee and thought about this line that remained with her long after she had watched the movie.
+
+        ‘Pain demands to be felt’, what a profound thought. On the first glance, you may not notice the glaring evidence as it is obscured by the simplicity. But stop and read it again.
+        
+        When was the last time you allowed yourself to feel your emotions? Did you allow yourself the luxury of feeding your heart with the emotions it desires the most? Did you let pain move through you and touch every bone and muscle in your body?
+        
+        Or did you, shun it away. Hiding from it thinking time will make it go away and bury it deep in a dark, dingy and forbidden corner and keep your body from going there? Sure alcohol and cigarettes helped you sleep that night and on many other nights. But why did you take that away from you? Why wouldn’t you set yourself free from these uncanny inhibitions, knowing only too well that it will all come back to you one day, bigger and worse.
+        
+        How did we lose sight of the one thing that manifests our soul? To become so arrogant that we began to think of ourselves as the epitome of chaos and suffering and love. Why did we let ourselves not become more than this box that we call personality, when in fact, it is just a desperate collection of thoughts and ideas that aren’t even ours?
+        
+        She called up her best friend and said “You can be infinite. You’re more than what you are feeling now. You’re more than your pain and happiness. You are all of that and much more. You measure time in eras; that of Shakespeare and Beethoven and Pink Floyd and not by the 24-hour format. You see water as rain and streams and don’t hide yourself under an umbrella only to take a shower every day. You see colors as hues of the sky and ocean as you stare into the vast infiniteness. You see compassion when you feed the strays and sneak them into your house. You see love beyond romance, in photosynthesis in plants between the green leaves and water. You see sorrow in tears and you let it crumple you whole on most nights, letting it pass through you, unopposed. You don’t attach these stupid weights and values to these fleeting emotions and assign and feed them away into the growing array in your brain. You see the days in nights and the nights in days. You see humor in the sunrise and resilience in sunset, empowering yourself to be amazed by them every day. You see pain in the eyes of the kids starving on the streets as your heart wrenches at your inability to help them. You see education in our silly conversations on the rooftop over that brownie. You find strength even when the memories of that addiction that brought you an irreversible loss, ambush you.You see life in death. You build maps from the wrinkles on faces. You built a home even as your family fell apart. You seek the truth behind the lies. You find warmth in blue. You’re the apostrophe and the period. You find geometry as you gaze at the constellations. You have toiled through the longest roads with equanimity, on foot. Giving comes naturally to you while taking, nearly not.
+        
+        You are infinite.
+        
+        Unprecedented and daunting.
+        
+        Fearless, vulnerable yet fragile.”
+    <div class="button-center">
+      <a href="../writing/" class="secondary-button">back to writing</a>
+    </div>
+  </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.poetry-content').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>
