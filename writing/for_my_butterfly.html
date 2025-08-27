@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>for my butterfly - kriti</title>
+</head>
+
+<body>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../#home" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../writing/">writing</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <a href="../writing/">writing</a>
+      <span>→</span>
+      <span>for my butterfly</span>
+    </nav>
+
+    <!-- Clean Header -->
+    <header class="page-header">
+      <h1>for my butterfly.</h1>
+    </header>
+
+    <!-- Poetry Content -->
+    <section class="poetry-content">
+      <p> staring into the vast infinite on an unsuspecting
+        night, a fluttering feeling touched upon me
+        a feeling so foreign and new and magical.
+        with the advent of time i would call it my happiness
+        happiness is but a butterfly
+        migrating to warmer lands to seek shelter 
+        
+        never a sun shone its light on me
+        incapable of being a beautiful butterfly, i was
+        planted in these ashes and built my home here
+        an abandoned rusted wasteland it became
+        never in the hope of a visitor i made content
+        till you came and showed me a different season
+        
+        roots mine wet and shrieking and shivering 
+        previously only a landmine where others waged their war
+        but you were warm and soft and delicate
+        a way of life unbeknownst to me
+        with fruits and flowers and colors and heat
+        
+        aching for the sun to come back to me
+        guiding your way to me just this once
+        and once again there’d be a spring in my step
+        and flowers on my leaves
+        
+        i’d hold the sun closer to me so youd stay forever
+        so we could blossom the life we’d dreamed in a faraway land
+        for you, i’d become the sun if theyd let me
+        now im just a cold barren land that i used to be
+        
+        still colder days await me as i lay bare
+        in the lonesome white nights and grey mornings
+        with my voice a prisoner in my bones, i’ll 
+        whisper of your lore unto eternity</p>
+    </section>
+
+    <div class="button-center">
+      <a href="../writing/" class="secondary-button">back to writing</a>
+    </div>
+  </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.poetry-content').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>
