@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>futile devices - kriti</title>
+</head>
+
+<body>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../#home" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../writing/">writing</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <a href="../writing/">writing</a>
+      <span>→</span>
+      <span>liberty</span>
+    </nav>
+
+    <!-- Clean Header -->
+    <header class="page-header">
+      <h1>liberty.</h1>
+    </header>
+
+    <!-- Poetry Content -->
+    <section class="poetry-content">
+      <p>Sipping on her morning coffee,
+        Her gaze, ever so timid, ever so real
+        Squanders her empty heart, a smile
+        So brave! Oh what a blush
+        That shimmer in her highlight.
+        The end of her playlist, the fear
+        Of unfaithfulness.
+        Fumbling for words 
+        gasping of void bliss.
+        The demons, now screaming so loud
+        The nights growing ugly
+        The moon in retrograde amidst a clear sky.
+        The liberty of knowledge
+        The liberty of pain
+        Liberty, a bane.
+        yet, each passing day she grows
+        finding comfort in her chaos
+        Embracing one bad memory at time
+        Her soul, a wrecked lost
+        Finding comfort in printed pages
+        That most do not find in empty eyes.
+        The liberty to love
+        The liberty to rejoice
+        Liberty, her voice.
+        
+        ~scribbles of a liberated heart
+
+    <div class="button-center">
+      <a href="../writing/" class="secondary-button">back to writing</a>
+    </div>
+  </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.poetry-content').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>
