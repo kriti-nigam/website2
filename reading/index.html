@@ -1,1 +1,214 @@
-Men without Women
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../index.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+  <title>reading - kriti</title>
+</head>
+
+<body>
+  <!-- Enhanced Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="../#home" class="logo">kriti</a>
+        <ul class="nav-links" id="navLinks">
+          <!-- <li><a href="../">home</a></li> -->
+          <li><a href="../#about">about</a></li>
+          <li><a href="../#work">work</a></li>
+          <li><a href="../#interests">interests</a></li>
+          <li><a href="../reading/" class="active">reading</a></li>
+          <li><a href="../#contact">contact</a></li>
+        </ul>
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Minimal Breadcrumb -->
+    <nav class="breadcrumb">
+      <a href="../">home</a>
+      <span>→</span>
+      <a href="../#interests">interests</a>
+      <span>→</span>
+      <span>reading</span>
+    </nav>
+
+    <!-- Clean Header -->
+    <header class="page-header">
+      <h1>reading.</h1>
+      
+    </header>
+
+    <!-- Main Content -->
+    <section class="content-section">
+      <p>
+        i was an avid reader, inculcated this habit in my schooldays. i used to be
+        the kid that read on the bus ride to & from school; i was that dedicated.
+        but unfortunately, i didn't keep at it and eventually paused reading for a
+        bit around 12th grade well into my college years.
+      </p>
+      <p>
+        i picked it up back again during covid but wasn't very committed to it. but then i rekindled this old
+        flame, so as a promise to myself, i consciously committed to it last year
+        and have been very regular at it. i owe a large part of re-building this
+        habit to blossoms, a very old bookstore in bangalore.
+      </p>
+      <p>
+        as part of that commitment, i've been tracking the books i'm reading. next
+        thing to do would be to draft book summaries, reviews. oh also, i started a
+        bookclub at IG - although it turned out to be a safe space to talk about
+        work, mental health, lifestyle, entrepreneurship, parenting for my
+        colleagues, but that's okay :)
+      </p>
+    </section>
+
+    <!-- Reading List -->
+    <section class="reading-section">
+      <h2 class="section-title">books i've read since last year</h2>
+      <div class="reading-list">
+        <ul class="reading-grid">
+          <li>Zero to One</li>
+          <li>Almond</li>
+          <li>A Man Called Ove</li>
+          <li>all about love</li>
+          <li>Old Man and the Sea</li>
+          <li>Animal Farm</li>
+          <li>The Book Thief</li>
+          <li>The Mom Test</li>
+          <li>Earthlings</li>
+          <li>really good, actually</li>
+          <li>Less</li>
+          <li>Five People You Meet in Heaven</li>
+          <li>Quarterlife: Search of Meaning in Early Adulthood</li>
+          <li>Lessons in Chemistry</li>
+          <li>Convenience Store Woman</li>
+          <li>Letters to a Young Poet</li>
+          <li>Crying in H Mart</li>
+          <li>The Philosophy of the Alpaca</li>
+          <li>The Hard Thing About Hard Things</li>
+          <li>Continuous Discovery Habits</li>
+          <li>Friends, Lovers and the Big Terrible Thing</li>
+          <li>Super Freakonomics</li>
+          <li>Slaughterhouse Five</li>
+          <li>Welcome to Paradise</li>
+          <li>Maybe You Should Talk to Someone</li>
+          <li>Anxious People</li>
+          <li>The Creative Act</li>
+          <li>Cracking the PM Interview</li>
+          <li>In Other Words</li>
+          <li>Just Kids</li>
+          <li>Visual MBA</li>
+          <li>Before the Coffee Gets Cold</li>
+          <li>Plato and a Platypus Walk into a Bar</li>
+          <li>Notes from Underground</li>
+          <li>The Woman Destroyed</li>
+          <li>Yellowface</li>
+          <li>The Authenticity Project</li>
+          <li>The Book of Disquiet</li>
+          <li>Good Omens</li>
+          <li>Tomorrow and Tomorrow and Tomorrow</li>
+          <li>Catalyst</li>
+          <li>The Vegetarian</li>
+          <li>My Brilliant Friend</li>
+          <li>Mythos</li>
+          <li>The Story of a New Name</li>
+          <li>Those Who Leave and Those Who Stay</li>
+          <li>Notes on a Nervous Planet</li>
+          <li>The Money Trap</li>
+          <li>The Story of the Lost Child</li>
+          <li>Days at the Morisaki Bookshop</li>
+          <li>Breakfast of Champions</li>
+          <li>Sputnik Sweetheart</li>
+          <li>Kim Jiyoung, Born 1982</li>
+          <li>My Friends</li>
+          <li> White Nights</li>
+               </ul>
+          
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <!-- Floating Back Button -->
+  <button class="back-button" id="backButton" aria-label="Back to top"></button>
+
+  <script>
+    // Mobile menu functionality
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+
+    // Back to top functionality
+    const backButton = document.getElementById('backButton');
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        backButton.classList.add('visible');
+      } else {
+        backButton.classList.remove('visible');
+      }
+    });
+
+    backButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animations
+    document.querySelectorAll('.content-section, .reading-section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(16px)';
+      section.style.transition = 'all 0.6s ease';
+      observer.observe(section);
+    });
+
+    // Keyboard navigation enhancement
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+
+</html>
