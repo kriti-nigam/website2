@@ -161,12 +161,12 @@
     }, observerOptions);
 
     // Observe elements for animations
-    document.querySelectorAll('.content-section, .writing-section').forEach(section => {
-      section.style.opacity = '0';
-      section.style.transform = 'translateY(16px)';
-      section.style.transition = 'all 0.6s ease';
-      observer.observe(section);
-    });
+    // document.querySelectorAll('.content-section, .writing-section').forEach(section => {
+    //   section.style.opacity = '0';
+    //   section.style.transform = 'translateY(16px)';
+    //   section.style.transition = 'all 0.6s ease';
+    //   observer.observe(section);
+    // });
 
     // Staggered animation for writing items
     document.querySelectorAll('.writing-item').forEach((item, index) => {

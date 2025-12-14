@@ -132,6 +132,7 @@
 
 .writing-grid {
   display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
   gap: 32px;
 }
 
