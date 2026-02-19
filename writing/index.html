@@ -175,7 +175,7 @@
       item.style.transition = 'all 0.4s ease';
       
       setTimeout(() => {
-        if (item.getBoundingClientRect().top < window.innerHeight) {
+        {
           item.style.opacity = '1';
           item.style.transform = 'translateY(0)';
         }

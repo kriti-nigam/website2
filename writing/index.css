@@ -127,19 +127,27 @@
 
 /* Writing Grid */
 .writing-section {
-  margin-top: 80px;
+  margin-top: 64px;
 }
 
 .writing-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Single column layout */
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .writing-item {
-  padding: 32px 0;
-  border-bottom: 1px solid rgba(107, 70, 193, 0.1);
+  padding: 24px 20px;
+  background: #fff;
+  border: 1px solid rgba(107, 70, 193, 0.1);
+  border-radius: 8px;
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  min-height: 140px;
 }
 
 .writing-item:last-child {
@@ -147,14 +155,16 @@
 }
 
 .writing-item:hover {
-  transform: translateX(8px);
+  border-color: rgba(107, 70, 193, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .writing-item h3 {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
   color: #1F2937;
-  margin-bottom: 12px;
+  margin: 0 0 8px 0;
   transition: color 0.2s ease;
 }
 
@@ -163,25 +173,27 @@
 }
 
 .writing-item p {
-  font-size: 15px;
+  font-size: 13px;
   color: #6B7280;
-  margin-bottom: 16px;
-  line-height: 1.6;
+  margin: 0 0 auto 0;
+  line-height: 1.5;
   font-weight: 300;
+  flex-grow: 1;
 }
 
 .writing-item a {
-  font-size: 14px;
+  font-size: 13px;
   color: #6B46C1;
   text-decoration: none;
   font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  margin-top: 12px;
   transition: gap 0.2s ease;
 }
 
-.writing-item a:hover {
+.writing-item:hover a {
   gap: 8px;
 }
 
@@ -315,22 +327,20 @@
     font-size: 16px;
   }
 
-  .writing-section, .reading-section {
-    margin-top: 64px;
+  .writing-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
   }
-
+  
   .writing-item {
-    padding: 24px 0;
+    padding: 20px 16px;
+    min-height: 130px;
   }
 
   .writing-item:hover {
-    transform: none;
+    transform: translateY(-2px);
   }
 
-  .reading-grid {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
 
   .poetry-content {
     font-size: 15px;
@@ -364,8 +374,13 @@
     font-size: 2.5rem;
   }
 
+  writing-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
   .writing-item {
-    padding: 20px 0;
+    min-height: auto;
   }
 
   .poetry-content {
