@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; background:#b4552f; }
+  a{ color:#f7efdf; } a:hover{ color:#ffd9b8; }
+
+  @media (max-width:900px){
+    .rgrid, .rgrid3, .pieces{ grid-template-columns:1fr !important; }
+    .cols3{ columns:1 !important; }
+    .wrow{ grid-template-columns:1fr !important; }
+    nav{ flex-wrap:wrap !important; gap:14px !important; }
+    .navlinks{ flex-wrap:wrap !important; gap:16px 22px !important; }
+    .padcard{ padding:44px 28px !important; }
+    .irow{ flex-wrap:wrap !important; }
+    .irow .icard{ flex:1 1 220px !important; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh; color:#f7efdf; font-family:'Space Grotesk',sans-serif; padding:60px 8vw 90px; background:
+  radial-gradient(1200px 700px at 80% -10%, rgba(255,214,168,.20), transparent 60%),
+  radial-gradient(900px 600px at 0% 100%, rgba(60,20,5,.22), transparent 55%),
+  #b4552f;">
+
+  <div style="font-family:'Caveat',cursive; font-size:28px; color:#ffd9b8; transform:rotate(-2deg);">the clay court system —</div>
+  <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(48px,7vw,92px); line-height:.95; margin:0 0 12px;">Design <em>reference.</em></h1>
+  <p style="max-width:560px; font-size:17px; line-height:1.65; color:#fbe9d4; margin:0 0 64px;">Everything a new page needs to feel like the same court. Full spec lives in CLAUDE.md.</p>
+
+  <!-- palette -->
+  <div style="font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:20px;">01 — Palette</div>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; margin-bottom:70px;">
+    <sc-for list="{{ swatches }}" as="s" hint-placeholder-count="7">
+      <div style="width:150px;">
+        <div style="height:92px; background:{{ s.bg }}; border:2px solid rgba(247,239,223,.25);"></div>
+        <div style="font-size:14px; font-weight:600; margin-top:8px;">{{ s.name }}</div>
+        <div style="font-size:12px; color:#ffd9b8;">{{ s.hex }}</div>
+        <div style="font-size:12px; color:#fbe9d4;">{{ s.use }}</div>
+      </div>
+    </sc-for>
+  </div>
+
+  <!-- type -->
+  <div style="font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:20px;">02 — Type</div>
+  <div style="display:grid; gap:26px; margin-bottom:70px; max-width:900px;">
+    <div style="border-bottom:2px dotted rgba(247,239,223,.3); padding-bottom:22px;">
+      <div style="font-family:'Instrument Serif',serif; font-size:64px; line-height:.95;">Display — Instrument Serif, <em>italic for emphasis.</em></div>
+      <div style="font-size:13px; color:#ffd9b8; margin-top:10px;">H1 clamp(64→150px) / 0.95 · H2 clamp(38→62px) / 1.05 · weight 400 only</div>
+    </div>
+    <div style="border-bottom:2px dotted rgba(247,239,223,.3); padding-bottom:22px;">
+      <div style="font-size:18px; line-height:1.7; color:#fbe9d4; max-width:640px;">Body — Space Grotesk 400–600. Comfortable 17–19px at 1.65–1.75 line height, soft cream #fbe9d4 on clay.</div>
+      <div style="font-size:13px; color:#ffd9b8; margin-top:10px;">UI labels 12–14px, uppercase, letter-spacing .12–.22em</div>
+    </div>
+    <div>
+      <div style="font-family:'Caveat',cursive; font-size:30px; color:#ffd9b8; transform:rotate(-1.5deg); width:max-content;">handwritten notes — Caveat, always a little tilted</div>
+      <div style="font-size:13px; color:#ffd9b8; margin-top:10px;">22–30px · #ffd9b8 on clay, #a34a28 on cream · rotate ±1.5–2°</div>
+    </div>
+  </div>
+
+  <!-- motifs -->
+  <div style="font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:20px;">03 — Motifs</div>
+  <div style="display:flex; gap:26px; flex-wrap:wrap; margin-bottom:70px;">
+    <div style="width:250px;">
+      <div style="position:relative; height:150px; background:#b4552f; border:2px solid rgba(247,239,223,.25); overflow:hidden;">
+        <div style="position:absolute; left:26px; top:0; bottom:0; width:3px; background:rgba(247,239,223,.34);"></div>
+        <div style="position:absolute; left:0; right:0; top:70px; height:3px; background:rgba(247,239,223,.2);"></div>
+      </div>
+      <div style="font-size:14px; font-weight:600; margin-top:8px;">Chalk lines</div>
+      <div style="font-size:12px; color:#fbe9d4;">3px, cream at 20–34%, fixed at 6vw</div>
+    </div>
+    <div style="width:250px;">
+      <div style="position:relative; height:150px; background:#b4552f; border:2px solid rgba(247,239,223,.25);">
+        <div style="position:absolute; left:60px; top:50px; width:52px; height:34px; transform:rotate(-18deg); border-radius:50%; background:radial-gradient(ellipse, rgba(112,42,16,.22), rgba(112,42,16,.16) 60%, transparent 76%); box-shadow:0 0 0 2px rgba(230,160,120,.14);"></div>
+        <div style="position:absolute; left:150px; top:90px; width:44px; height:30px; transform:rotate(24deg); border-radius:50%; background:radial-gradient(ellipse, rgba(112,42,16,.22), rgba(112,42,16,.16) 60%, transparent 76%); box-shadow:0 0 0 2px rgba(230,160,120,.14);"></div>
+      </div>
+      <div style="font-size:14px; font-weight:600; margin-top:8px;">Ball marks</div>
+      <div style="font-size:12px; color:#fbe9d4;">Faint elliptical smudges, random tilt</div>
+    </div>
+    <div style="width:250px;">
+      <div style="height:150px; display:flex; align-items:center; justify-content:center; background:#b4552f; border:2px solid rgba(247,239,223,.25);">
+        <div style="width:36px; height:36px; border-radius:50%; background:radial-gradient(circle at 30% 28%, #f2ff9b, #cddd3c 60%, #93a51e); box-shadow:0 10px 20px rgba(60,20,5,.35);"></div>
+      </div>
+      <div style="font-size:14px; font-weight:600; margin-top:8px;">The ball</div>
+      <div style="font-size:12px; color:#fbe9d4;">Follows the cursor site-wide, kicks up dust when fast</div>
+    </div>
+    <div style="width:250px;">
+      <div style="height:150px; background:#f7efdf; border:2px solid rgba(247,239,223,.25); transform:rotate(-1.5deg); box-shadow:0 10px 26px rgba(46,26,14,.22); display:flex; align-items:center; justify-content:center;">
+        <span style="font-family:'Caveat',cursive; font-size:24px; color:#a34a28;">tilted paper card</span>
+      </div>
+      <div style="font-size:14px; font-weight:600; margin-top:8px;">Paper cards</div>
+      <div style="font-size:12px; color:#fbe9d4;">Cream, tilt ±1–2°, straighten + lift on hover</div>
+    </div>
+  </div>
+
+  <!-- components -->
+  <div style="font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:20px;">04 — Components</div>
+  <div style="display:flex; gap:40px; flex-wrap:wrap; align-items:flex-start;">
+    <div>
+      <div style="font-size:13px; color:#ffd9b8; margin-bottom:12px;">Section kicker (tennis scoring)</div>
+      <div style="font-size:12px; letter-spacing:.22em; text-transform:uppercase; color:#ffd9b8;">First set — about</div>
+    </div>
+    <div>
+      <div style="font-size:13px; color:#ffd9b8; margin-bottom:12px;">Buttons</div>
+      <div style="display:flex; gap:14px;">
+        <span style="color:#f7efdf; background:#a34a28; padding:13px 26px; font-size:13px; letter-spacing:.12em; text-transform:uppercase;">Filled →</span>
+        <span style="color:#f7efdf; border:2px solid #f7efdf; padding:11px 26px; font-size:13px; letter-spacing:.12em; text-transform:uppercase;">Outline →</span>
+      </div>
+      <div style="font-size:12px; color:#fbe9d4; margin-top:8px;">On cream sections: terracotta #a34a28 versions</div>
+    </div>
+    <div>
+      <div style="font-size:13px; color:#ffd9b8; margin-bottom:12px;">Scorecard row</div>
+      <div style="width:280px; display:flex; justify-content:space-between; border-bottom:2px dotted rgba(247,239,223,.35); padding-bottom:10px; font-size:16px;">
+        <span>Months on clay</span><span style="font-family:'Instrument Serif',serif; font-size:26px;">7</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals(){
+    return { swatches: [
+      { name:'Clay ground', hex:'#b4552f', bg:'#b4552f', use:'Page background' },
+      { name:'Deep clay', hex:'#7a3014', bg:'#7a3014', use:'Marks, grains' },
+      { name:'Cream', hex:'#f7efdf', bg:'#f7efdf', use:'Text, cards, inverted sections' },
+      { name:'Soft cream', hex:'#fbe9d4', bg:'#fbe9d4', use:'Body text on clay' },
+      { name:'Peach', hex:'#ffd9b8', bg:'#ffd9b8', use:'Kickers, notes' },
+      { name:'Terracotta', hex:'#a34a28', bg:'#a34a28', use:'Buttons, accents on cream' },
+      { name:'Ball', hex:'#cddd3c', bg:'radial-gradient(circle at 30% 28%, #f2ff9b, #cddd3c 60%, #93a51e)', use:'The ball, nothing else' },
+    ]};
+  }
+}
+</script>
+</body>
+</html>

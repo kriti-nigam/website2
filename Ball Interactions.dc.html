@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; background:#8a3d20; }
+  a{ color:#f7efdf; } a:hover{ color:#ffd9b8; }
+  .dust{ position:absolute; border-radius:50%; pointer-events:none; background:radial-gradient(circle, rgba(230,150,105,.7), transparent 70%); transition:transform .5s ease-out, opacity .5s ease-out; }
+</style>
+</helmet>
+<section style="padding:48px; display:flex; flex-wrap:wrap; gap:36px; font-family:'Space Grotesk',sans-serif; color:#f7efdf; align-items:flex-start;">
+  <div style="width:100%; max-width:900px;">
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:44px; margin:0 0 6px;">Ball interactions — <em>five live demos</em></h1>
+    <p style="margin:0; font-size:16px; color:#ffd9b8;">Play with each one below, then tell me which goes on the site.</p>
+  </div>
+
+  <!-- 1a cursor follow -->
+  <div id="1a" style="width:560px;">
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:10px;">
+      <span style="background:#f7efdf; color:#8a3d20; font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px;">1a</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:26px; margin:0;">Ball follows your cursor</h2>
+    </div>
+    <p style="font-size:14px; color:#ffd9b8; margin:0 0 12px;">Move your mouse inside — the ball chases it; move fast and it kicks up dust.</p>
+    <div ref="{{ p1 }}" style="position:relative; width:560px; height:360px; overflow:hidden; background:#b4552f; border:3px solid rgba(247,239,223,.35); cursor:none;">
+      <div style="position:absolute; left:40px; top:0; bottom:0; width:2px; background:rgba(247,239,223,.3);"></div>
+      <div ref="{{ b1 }}" style="position:absolute; left:0; top:0; width:28px; height:28px; border-radius:50%; will-change:transform; background:radial-gradient(circle at 30% 28%, #f2ff9b, #cddd3c 60%, #93a51e); box-shadow:0 8px 16px rgba(60,20,5,.35);"></div>
+    </div>
+  </div>
+
+  <!-- 1b scroll rally -->
+  <div id="1b" style="width:560px;">
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:10px;">
+      <span style="background:#f7efdf; color:#8a3d20; font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px;">1b</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:26px; margin:0;">Rally on scroll</h2>
+    </div>
+    <p style="font-size:14px; color:#ffd9b8; margin:0 0 12px;">Scroll the panel — the ball rallies left ↔ right, arcing over the content.</p>
+    <div ref="{{ p2 }}" style="position:relative; width:560px; height:360px; overflow-y:auto; background:#b4552f; border:3px solid rgba(247,239,223,.35);">
+      <div style="position:sticky; top:0; height:0; overflow:visible; z-index:3;">
+        <div ref="{{ b2 }}" style="position:absolute; left:0; top:0; width:26px; height:26px; border-radius:50%; will-change:transform; background:radial-gradient(circle at 30% 28%, #f2ff9b, #cddd3c 60%, #93a51e); box-shadow:0 8px 16px rgba(60,20,5,.35);"></div>
+      </div>
+      <div style="padding:30px 60px;">
+        <sc-for list="{{ rallyHeads }}" as="h" hint-placeholder-count="5">
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:34px; margin:120px 0; text-align:{{ h.align }};">{{ h.text }}</h3>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1c ricochet -->
+  <div id="1c" style="width:560px;">
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:10px;">
+      <span style="background:#f7efdf; color:#8a3d20; font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px;">1c</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:26px; margin:0;">Loose ball, ricochet</h2>
+    </div>
+    <p style="font-size:14px; color:#ffd9b8; margin:0 0 12px;">It drifts and bounces off edges; chase it with the cursor and it darts away — click it for a squash-pop.</p>
+    <div ref="{{ p3 }}" style="position:relative; width:560px; height:360px; overflow:hidden; background:#b4552f; border:3px solid rgba(247,239,223,.35);">
+      <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:32px; margin:0; position:absolute; left:34px; top:140px;">Rallies I've <em>played.</em></h3>
+      <div ref="{{ b3 }}" style="position:absolute; left:0; top:0; width:30px; height:30px; border-radius:50%; cursor:pointer; will-change:transform; background:radial-gradient(circle at 30% 28%, #f2ff9b, #cddd3c 60%, #93a51e); box-shadow:0 8px 16px rgba(60,20,5,.35);"></div>
+    </div>
+  </div>
+
+  <!-- 1d serve per section -->
+  <div id="1d" style="width:560px;">
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:10px;">
+      <span style="background:#f7efdf; color:#8a3d20; font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px;">1d</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:26px; margin:0;">A serve for every section</h2>
+    </div>
+    <p style="font-size:14px; color:#ffd9b8; margin:0 0 12px;">Scroll to a new section — a ball serves in, bounces at the title, and rolls to rest in the margin.</p>
+    <div ref="{{ p4 }}" style="position:relative; width:560px; height:360px; overflow-y:auto; background:#b4552f; border:3px solid rgba(247,239,223,.35);">
+      <div style="position:sticky; top:0; height:0; overflow:visible; z-index:3;">
+        <div ref="{{ b4wrap }}" style="position:absolute; inset:0;"></div>
+      </div>
+      <sc-for list="{{ serveSections }}" as="s" hint-placeholder-count="3">
+        <div style="height:340px; padding:60px 60px 0;">
+          <div style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#ffd9b8; margin-bottom:10px;">{{ s.kicker }}</div>
+          <h3 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:36px; margin:0;">{{ s.title }}</h3>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- 1e drag & throw -->
+  <div id="1e" style="width:560px;">
+    <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:10px;">
+      <span style="background:#f7efdf; color:#8a3d20; font-size:12px; font-weight:600; padding:3px 9px; border-radius:999px;">1e</span>
+      <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:26px; margin:0;">Drag &amp; throw</h2>
+    </div>
+    <p style="font-size:14px; color:#ffd9b8; margin:0 0 12px;">Grab the ball and fling it — gravity, bounces, dust on every impact, then it settles.</p>
+    <div ref="{{ p5 }}" style="position:relative; width:560px; height:360px; overflow:hidden; background:#b4552f; border:3px solid rgba(247,239,223,.35);">
+      <div style="position:absolute; left:0; right:0; bottom:26px; height:2px; background:rgba(247,239,223,.3);"></div>
+      <div ref="{{ b5 }}" style="position:absolute; left:0; top:0; width:34px; height:34px; border-radius:50%; cursor:grab; touch-action:none; will-change:transform; background:radial-gradient(circle at 30% 28%, #f2ff9b, #cddd3c 60%, #93a51e); box-shadow:0 10px 20px rgba(60,20,5,.35);"></div>
+    </div>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  p1=React.createRef(); b1=React.createRef();
+  p2=React.createRef(); b2=React.createRef();
+  p3=React.createRef(); b3=React.createRef();
+  p4=React.createRef(); b4wrap=React.createRef();
+  p5=React.createRef(); b5=React.createRef();
+
+  dust(panel, x, y, n, dirx, diry){
+    const kx=-(dirx||0)*6, ky=-(diry||0)*6;
+    for(let i=0;i<(n||3);i++){
+      const d=document.createElement('div'); d.className='dust';
+      const s=5+Math.random()*14, dur=.55+Math.random()*.5;
+      const hue=Math.random()<.4?'rgba(232,166,124,.38)':'rgba(214,120,76,.45)';
+      d.style.cssText+=`left:${x-s/2+(Math.random()-.5)*10}px;top:${y-s/2+(Math.random()-.5)*6}px;width:${s}px;height:${s}px;opacity:${.3+Math.random()*.25};background:radial-gradient(circle at ${30+Math.random()*40}% ${30+Math.random()*40}%, ${hue}, transparent 68%);transition:transform ${dur}s cubic-bezier(.2,.6,.3,1), opacity ${dur}s ease-out;`;
+      panel.appendChild(d);
+      requestAnimationFrame(()=>{
+        d.style.transform=`translate(${kx+(Math.random()-.5)*60}px,${ky-14-Math.random()*38}px) scale(${1.8+Math.random()*1.6}) rotate(${(Math.random()-.5)*90}deg)`;
+        d.style.opacity='0';
+      });
+      setTimeout(()=>d.remove(),dur*1000+80);
+    }
+    // heavier grains that fall back to the clay
+    for(let i=0;i<Math.ceil((n||3)/2);i++){
+      const g=document.createElement('div'); g.className='dust';
+      const s=2+Math.random()*3, dur=.45+Math.random()*.3;
+      g.style.cssText+=`left:${x}px;top:${y}px;width:${s}px;height:${s}px;opacity:.9;background:#7a3014;transition:transform ${dur}s cubic-bezier(.2,-0.3,.7,1), opacity ${dur}s ease-in;`;
+      panel.appendChild(g);
+      requestAnimationFrame(()=>{
+        g.style.transform=`translate(${kx*1.4+(Math.random()-.5)*70}px,${8+Math.random()*14}px)`;
+        g.style.opacity='0';
+      });
+      setTimeout(()=>g.remove(),dur*1000+80);
+    }
+  }
+
+  componentDidMount(){
+    const D=(p,x,y,n)=>this.dust(p,x,y,n);
+    // --- 1a cursor follow ---
+    const s1={x:260,y:170,tx:260,ty:170,px:260,py:170};
+    this.p1.current.addEventListener('pointermove',e=>{
+      const r=this.p1.current.getBoundingClientRect();
+      s1.tx=e.clientX-r.left; s1.ty=e.clientY-r.top;
+    });
+    // --- 1c ricochet ---
+    const s3={x:80,y:60,vx:1.4,vy:1.1,mx:-999,my:-999,sq:1};
+    this.p3.current.addEventListener('pointermove',e=>{
+      const r=this.p3.current.getBoundingClientRect();
+      s3.mx=e.clientX-r.left; s3.my=e.clientY-r.top;
+    });
+    this.p3.current.addEventListener('pointerleave',()=>{ s3.mx=-999; s3.my=-999; });
+    this.b3.current.addEventListener('click',()=>{ s3.vy=-6; s3.vx+= (Math.random()-.5)*4; s3.sq=.55; D(this.p3.current,s3.x+15,s3.y+28,5); });
+    // --- 1e drag & throw ---
+    const s5={x:260,y:60,vx:0,vy:0,drag:false,lx:0,ly:0,lt:0};
+    const b5=this.b5.current, p5=this.p5.current;
+    b5.addEventListener('pointerdown',e=>{
+      s5.drag=true; b5.setPointerCapture(e.pointerId); b5.style.cursor='grabbing';
+      const r=p5.getBoundingClientRect(); s5.lx=e.clientX-r.left; s5.ly=e.clientY-r.top; s5.lt=performance.now();
+    });
+    b5.addEventListener('pointermove',e=>{
+      if(!s5.drag)return;
+      const r=p5.getBoundingClientRect(); const nx=e.clientX-r.left, ny=e.clientY-r.top;
+      const t=performance.now(), dt=Math.max(8,t-s5.lt);
+      s5.vx=(nx-s5.lx)/dt*16; s5.vy=(ny-s5.ly)/dt*16;
+      s5.x=nx-17; s5.y=ny-17; s5.lx=nx; s5.ly=ny; s5.lt=t;
+    });
+    const drop=()=>{ s5.drag=false; b5.style.cursor='grab'; };
+    b5.addEventListener('pointerup',drop); b5.addEventListener('pointercancel',drop);
+    // --- 1b scroll rally ---
+    const p2=this.p2.current, b2=this.b2.current;
+    const rally=()=>{
+      const max=p2.scrollHeight-p2.clientHeight||1;
+      const pr=p2.scrollTop/max;
+      const hops=4, ph=pr*hops;
+      const x=30+(500-30)*(0.5-0.5*Math.cos(Math.PI*ph));
+      const y=300-260*Math.abs(Math.sin(Math.PI*ph));
+      b2.style.transform=`translate(${x}px,${y}px)`;
+      const prev=b2._ph||0;
+      if(Math.floor(ph)!==Math.floor(prev)) D(p2.querySelector('div'), x+13, 316, 4);
+      b2._ph=ph;
+    };
+    p2.addEventListener('scroll',rally,{passive:true}); rally();
+    // --- 1d serve per section ---
+    const p4=this.p4.current, wrap=this.b4wrap.current;
+    let curSec=-1;
+    const serve=(i)=>{
+      const ball=document.createElement('div');
+      ball.style.cssText='position:absolute;width:26px;height:26px;border-radius:50%;background:radial-gradient(circle at 30% 28%, #f2ff9b, #cddd3c 60%, #93a51e);box-shadow:0 8px 16px rgba(60,20,5,.35);left:0;top:0;';
+      wrap.appendChild(ball);
+      const bx=120+((i*67)%160), by=110;
+      const restX=506, restY=300-i*34;
+      const anim=ball.animate([
+        { transform:'translate(600px,-40px)', offset:0 },
+        { transform:`translate(${bx}px,${by}px) scale(1,.7)`, offset:.35 },
+        { transform:`translate(${(bx+restX)/2}px,${by-90}px)`, offset:.6 },
+        { transform:`translate(${restX}px,${restY}px) scale(1,.85)`, offset:.82 },
+        { transform:`translate(${restX}px,${restY-18}px)`, offset:.92 },
+        { transform:`translate(${restX}px,${restY}px)`, offset:1 },
+      ],{ duration:1300, easing:'cubic-bezier(.3,.5,.4,1)', fill:'forwards' });
+      anim.finished.then(()=>D(p4.querySelector('div'), restX+13, restY+24, 3)).catch(()=>{});
+      setTimeout(()=>D(p4.querySelector('div'), bx+13, by+24, 5), 1300*.35);
+    };
+    const onScroll4=()=>{
+      const i=Math.min(2,Math.round(p4.scrollTop/340));
+      if(i!==curSec){ curSec=i; serve(i); }
+    };
+    p4.addEventListener('scroll',onScroll4,{passive:true}); onScroll4();
+    // --- RAF loop (1a, 1c, 1e) ---
+    const tick=()=>{
+      // 1a
+      s1.x+=(s1.tx-s1.x)*.09; s1.y+=(s1.ty-s1.y)*.09;
+      const v1x=s1.x-s1.px, v1y=s1.y-s1.py, sp=Math.hypot(v1x,v1y);
+      if(sp>5) D(this.p1.current, s1.x+14, s1.y+24, sp>12?3:1, v1x/sp*Math.min(sp,14), v1y/sp*Math.min(sp,14));
+      s1.px=s1.x; s1.py=s1.y;
+      this.b1.current.style.transform=`translate(${s1.x}px,${s1.y}px) rotate(${s1.x*2}deg)`;
+      // 1c
+      const dx=s3.x+15-s3.mx, dy=s3.y+15-s3.my, dist=Math.hypot(dx,dy);
+      if(dist<90){ s3.vx+=dx/dist*.5; s3.vy+=dy/dist*.5; }
+      s3.vx*= .995; s3.vy*= .995;
+      const spd=Math.hypot(s3.vx,s3.vy); if(spd<0.8){ s3.vx*=1.02; s3.vy*=1.02; } if(spd>5){ s3.vx*=.96; s3.vy*=.96; }
+      s3.x+=s3.vx; s3.y+=s3.vy;
+      if(s3.x<0){s3.x=0;s3.vx=Math.abs(s3.vx);D(this.p3.current,6,s3.y+15,2);} if(s3.x>527){s3.x=527;s3.vx=-Math.abs(s3.vx);D(this.p3.current,550,s3.y+15,2);}
+      if(s3.y<0){s3.y=0;s3.vy=Math.abs(s3.vy);} if(s3.y>324){s3.y=324;s3.vy=-Math.abs(s3.vy);D(this.p3.current,s3.x+15,350,2);}
+      s3.sq+= (1-s3.sq)*.15;
+      this.b3.current.style.transform=`translate(${s3.x}px,${s3.y}px) scale(1,${s3.sq})`;
+      // 1e
+      if(!s5.drag){
+        s5.vy+=.5; s5.x+=s5.vx; s5.y+=s5.vy;
+        const floor=360-26-34;
+        if(s5.y>floor){ s5.y=floor; if(Math.abs(s5.vy)>1.2){ D(p5,s5.x+17,floor+30,Math.min(6,Math.ceil(Math.abs(s5.vy)))); } s5.vy=-s5.vy*.55; s5.vx*=.92; if(Math.abs(s5.vy)<.8)s5.vy=0; }
+        if(s5.x<0){s5.x=0;s5.vx=Math.abs(s5.vx)*.7;D(p5,6,s5.y+17,2);} if(s5.x>523){s5.x=523;s5.vx=-Math.abs(s5.vx)*.7;D(p5,550,s5.y+17,2);}
+        if(s5.vy===0) s5.vx*=.97;
+      }
+      b5.style.transform=`translate(${s5.x}px,${s5.y}px) rotate(${s5.x*3}deg)`;
+      this._raf=requestAnimationFrame(tick);
+    };
+    this._raf=requestAnimationFrame(tick);
+  }
+  componentWillUnmount(){ cancelAnimationFrame(this._raf); }
+
+  renderVals(){
+    return {
+      p1:this.p1,b1:this.b1,p2:this.p2,b2:this.b2,p3:this.p3,b3:this.b3,p4:this.p4,b4wrap:this.b4wrap,p5:this.p5,b5:this.b5,
+      rallyHeads:[
+        { text:'First set — about', align:'left' },
+        { text:'Second set — work', align:'right' },
+        { text:'Changeover — off court', align:'left' },
+        { text:'Match point — say hi', align:'right' },
+        { text:'Game, set, match.', align:'center' },
+      ],
+      serveSections:[
+        { kicker:'First set', title:'About' },
+        { kicker:'Second set', title:'Work' },
+        { kicker:'Changeover', title:'Off court' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=Oswald:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=PT+Serif:ital@0;1&display=swap" rel="stylesheet">
+<meta name="design_doc_mode" content="canvas">
+<style>
+  @keyframes ballBounce { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-22px); } }
+  @keyframes ballRoll { 0%{ transform: translateX(0) rotate(0); } 100%{ transform: translateX(120px) rotate(360deg); } }
+  @keyframes flip { 0%{ transform: rotateX(0); } 50%{ transform: rotateX(-90deg); } 100%{ transform: rotateX(0); } }
+</style>
+</helmet>
+
+<!-- ===== VARIATION 1 — RETRO VINTAGE ===== -->
+<div style="position:absolute; left:0px; top:0px; width:560px;">
+  <div data-drags-parent="1" style="font-family:'Archivo',sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5b5340; margin-bottom:14px; display:flex; align-items:center; gap:10px;">
+    <span style="width:9px;height:9px;border-radius:50%;background:#c9a24b;display:inline-block;"></span>
+    01 · Retro Vintage — "1977 Wimbledon poster"
+  </div>
+  <div style="background:#f4efe1; border-radius:3px; box-shadow:0 1px 3px rgba(0,0,0,.12); overflow:hidden; color:#2f3a2c;">
+    <!-- nav -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:20px 30px; border-bottom:1px solid #d8cfb4;">
+      <div style="font-family:'DM Serif Display',serif; font-size:24px; letter-spacing:-0.01em;">kriti.</div>
+      <div style="display:flex; gap:20px; font-family:'Archivo',sans-serif; font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:#6b6450;">
+        <span>about</span><span>work</span><span>interests</span><span>contact</span>
+      </div>
+    </div>
+    <!-- hero -->
+    <div style="padding:40px 30px 36px; position:relative; background:repeating-linear-gradient(90deg,#f4efe1 0 38px,#efe9d8 38px 40px);">
+      <div style="display:inline-block; font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#8a5b2a; border:1px solid #c9a24b; padding:5px 12px; border-radius:999px; margin-bottom:24px;">RG · clay season 2026</div>
+      <div style="font-family:'Spectral',serif; font-style:italic; font-size:22px; color:#4d6b3f; margin-bottom:6px;">hello, I'm</div>
+      <div style="font-family:'DM Serif Display',serif; font-size:76px; line-height:0.9; letter-spacing:-0.02em; color:#2f3a2c;">KRITI</div>
+      <div style="position:absolute; right:34px; top:54px; width:46px; height:46px; border-radius:50%; background:#d8e04a; box-shadow:inset -6px -6px 0 rgba(0,0,0,.06); animation:ballBounce 1.8s ease-in-out infinite;"></div>
+      <p style="font-family:'Spectral',serif; font-size:16px; line-height:1.55; max-width:380px; margin:22px 0 26px; color:#52503f;">Learning tennis on clay, tinkering with AI, and building meaningful products. 5 years in PM. Perpetually curious.</p>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:0.1em; text-transform:uppercase;">
+        <span style="background:#3d6b3a; color:#f4efe1; padding:6px 12px; border-radius:999px;">product</span>
+        <span style="border:1px solid #b9ae8e; padding:6px 12px; border-radius:999px; color:#6b6450;">clay court player</span>
+        <span style="border:1px solid #b9ae8e; padding:6px 12px; border-radius:999px; color:#6b6450;">ai tinkerer</span>
+        <span style="border:1px solid #b9ae8e; padding:6px 12px; border-radius:999px; color:#6b6450;">bangalore</span>
+      </div>
+    </div>
+    <!-- stat strip -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #d8cfb4;">
+      <div style="padding:20px; text-align:center; border-right:1px solid #d8cfb4;"><div style="font-family:'DM Serif Display',serif; font-size:36px; color:#3d6b3a;">5</div><div style="font-family:'Archivo',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#8a836b;">years in PM</div></div>
+      <div style="padding:20px; text-align:center; border-right:1px solid #d8cfb4;"><div style="font-family:'DM Serif Display',serif; font-size:36px; color:#3d6b3a;">3</div><div style="font-family:'Archivo',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#8a836b;">industries</div></div>
+      <div style="padding:20px; text-align:center;"><div style="font-family:'DM Serif Display',serif; font-size:36px; color:#3d6b3a;">4mo</div><div style="font-family:'Archivo',sans-serif; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#8a836b;">on clay</div></div>
+    </div>
+    <!-- draw sheet teaser -->
+    <div style="padding:30px;">
+      <div style="font-family:'Archivo',sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#8a836b; margin-bottom:8px;">02 / 04 · work</div>
+      <div style="font-family:'DM Serif Display',serif; font-size:34px; margin-bottom:18px;">the <span style="font-style:italic; color:#3d6b3a;">draw sheet.</span></div>
+      <div style="border-top:1px solid #d8cfb4; padding:14px 0; display:flex; justify-content:space-between; align-items:baseline;"><div><div style="font-family:'Spectral',serif; font-size:17px;">Network Solutions</div><div style="font-family:'Archivo',sans-serif; font-size:11px; color:#8a836b;">Aug '24 – present</div></div><span style="font-family:'Archivo',sans-serif; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#3d6b3a; border:1px solid #3d6b3a; padding:3px 9px; border-radius:999px;">active</span></div>
+      <div style="border-top:1px solid #d8cfb4; padding:14px 0;"><div style="font-family:'Spectral',serif; font-size:17px;">Neerakriti</div><div style="font-family:'Archivo',sans-serif; font-size:11px; color:#8a836b;">May '24 – present · side project</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== VARIATION 2 — MODERN BROADCAST ===== -->
+<div style="position:absolute; left:660px; top:0px; width:560px;">
+  <div data-drags-parent="1" style="font-family:'Archivo',sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5b5340; margin-bottom:14px; display:flex; align-items:center; gap:10px;">
+    <span style="width:9px;height:9px;border-radius:50%;background:#d8e04a;display:inline-block;"></span>
+    02 · Modern Broadcast — "live match graphics"
+  </div>
+  <div style="background:#0e2a1c; border-radius:3px; box-shadow:0 1px 3px rgba(0,0,0,.12); overflow:hidden; color:#eef3ec;">
+    <!-- nav -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:18px 30px; border-bottom:1px solid rgba(255,255,255,.1);">
+      <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:22px; letter-spacing:0.02em; color:#d8e04a;">KRITI.</div>
+      <div style="display:flex; gap:18px; font-family:'Oswald',sans-serif; font-weight:300; font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:#9fb3a3;">
+        <span>about</span><span>work</span><span>interests</span><span>contact</span>
+      </div>
+    </div>
+    <!-- scoreboard banner -->
+    <div style="background:#d8e04a; color:#0e2a1c; display:flex; justify-content:space-between; align-items:center; padding:8px 30px; font-family:'Oswald',sans-serif; font-weight:500; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;">
+      <span>● LIVE</span><span>RG · CLAY SEASON 2026</span><span>SET 1</span>
+    </div>
+    <!-- hero -->
+    <div style="padding:42px 30px 36px; position:relative;">
+      <div style="font-family:'Archivo',sans-serif; font-size:13px; color:#9fb3a3; margin-bottom:4px;">hello, I'm</div>
+      <div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:86px; line-height:0.85; letter-spacing:0.01em; text-transform:uppercase;">KRITI</div>
+      <div style="position:absolute; right:30px; top:46px; width:44px; height:44px; border-radius:50%; background:#d8e04a; box-shadow:0 0 0 4px rgba(216,224,74,.2); animation:ballBounce 1.5s ease-in-out infinite;"></div>
+      <p style="font-family:'Archivo',sans-serif; font-size:15px; line-height:1.55; max-width:390px; margin:20px 0 24px; color:#c4d2c7;">Learning tennis on clay, tinkering with AI, and building meaningful products. 5 years in PM. Perpetually curious.</p>
+      <div style="display:flex; gap:8px; flex-wrap:wrap; font-family:'Oswald',sans-serif; font-weight:400; font-size:11px; letter-spacing:0.12em; text-transform:uppercase;">
+        <span style="background:#d8e04a; color:#0e2a1c; padding:6px 13px;">product</span>
+        <span style="border:1px solid rgba(255,255,255,.25); padding:6px 13px; color:#9fb3a3;">clay court player</span>
+        <span style="border:1px solid rgba(255,255,255,.25); padding:6px 13px; color:#9fb3a3;">ai tinkerer</span>
+        <span style="border:1px solid rgba(255,255,255,.25); padding:6px 13px; color:#9fb3a3;">bangalore</span>
+      </div>
+    </div>
+    <!-- score flip stats -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.1);">
+      <div style="background:#0e2a1c; padding:22px; text-align:center;"><div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:42px; color:#d8e04a; animation:flip 4s ease-in-out infinite;">5</div><div style="font-family:'Oswald',sans-serif; font-weight:300; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#9fb3a3;">years in PM</div></div>
+      <div style="background:#0e2a1c; padding:22px; text-align:center;"><div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:42px; color:#d8e04a;">3</div><div style="font-family:'Oswald',sans-serif; font-weight:300; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#9fb3a3;">industries</div></div>
+      <div style="background:#0e2a1c; padding:22px; text-align:center;"><div style="font-family:'Oswald',sans-serif; font-weight:700; font-size:42px; color:#d8e04a;">4mo</div><div style="font-family:'Oswald',sans-serif; font-weight:300; font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:#9fb3a3;">on clay</div></div>
+    </div>
+    <!-- work teaser -->
+    <div style="padding:30px;">
+      <div style="font-family:'Oswald',sans-serif; font-weight:300; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:#9fb3a3; margin-bottom:8px;">02 / 04 · work</div>
+      <div style="font-family:'Oswald',sans-serif; font-weight:600; font-size:36px; text-transform:uppercase; margin-bottom:16px;">THE DRAW SHEET</div>
+      <div style="background:rgba(255,255,255,.04); border-left:3px solid #d8e04a; padding:14px 16px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;"><div><div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px;">Network Solutions</div><div style="font-family:'Archivo',sans-serif; font-size:11px; color:#9fb3a3;">Aug '24 – present</div></div><span style="font-family:'Oswald',sans-serif; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#d8e04a;">active</span></div>
+      <div style="background:rgba(255,255,255,.04); border-left:3px solid rgba(255,255,255,.2); padding:14px 16px;"><div style="font-family:'Archivo',sans-serif; font-weight:600; font-size:16px;">Neerakriti</div><div style="font-family:'Archivo',sans-serif; font-size:11px; color:#9fb3a3;">May '24 – present · side project</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== VARIATION 3 — EDITORIAL ===== -->
+<div style="position:absolute; left:1320px; top:0px; width:560px;">
+  <div data-drags-parent="1" style="font-family:'Archivo',sans-serif; font-size:13px; letter-spacing:0.14em; text-transform:uppercase; color:#5b5340; margin-bottom:14px; display:flex; align-items:center; gap:10px;">
+    <span style="width:9px;height:9px;border-radius:50%;background:#3d6b3a;display:inline-block;"></span>
+    03 · Editorial — "country-club magazine"
+  </div>
+  <div style="background:#fbfbf8; border-radius:3px; box-shadow:0 1px 3px rgba(0,0,0,.12); overflow:hidden; color:#23241f;">
+    <!-- nav -->
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:22px 34px; border-bottom:1px solid #e7e7df;">
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:26px; letter-spacing:0.01em;">kriti.</div>
+      <div style="display:flex; gap:22px; font-family:'PT Serif',serif; font-size:13px; font-style:italic; color:#6c6d63;">
+        <span>about</span><span>work</span><span>interests</span><span>contact</span>
+      </div>
+    </div>
+    <!-- hero -->
+    <div style="padding:48px 34px 30px; text-align:center; position:relative;">
+      <div style="font-family:'PT Serif',serif; font-size:12px; letter-spacing:0.24em; text-transform:uppercase; color:#9a9b8f; margin-bottom:26px;">RG &nbsp;·&nbsp; clay season 2026</div>
+      <div style="font-family:'PT Serif',serif; font-style:italic; font-size:20px; color:#3d6b3a; margin-bottom:2px;">hello, I'm</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:96px; line-height:0.92; letter-spacing:0.01em;">Kriti</div>
+      <div style="width:50px; height:1px; background:#23241f; margin:24px auto;"></div>
+      <p style="font-family:'PT Serif',serif; font-size:16px; line-height:1.65; max-width:380px; margin:0 auto 24px; color:#4a4b42;">Learning tennis on clay, tinkering with AI, and building meaningful products. Five years in PM. Perpetually curious.</p>
+      <div style="display:flex; gap:18px; justify-content:center; flex-wrap:wrap; font-family:'PT Serif',serif; font-style:italic; font-size:13px; color:#6c6d63;">
+        <span>product</span><span style="color:#cfd0c6;">/</span><span>clay court player</span><span style="color:#cfd0c6;">/</span><span>ai tinkerer</span><span style="color:#cfd0c6;">/</span><span>bangalore</span>
+      </div>
+      <div style="position:absolute; left:34px; top:54px; width:14px; height:14px; border-radius:50%; background:#d8e04a; animation:ballBounce 2.2s ease-in-out infinite;"></div>
+    </div>
+    <!-- stats -->
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #e7e7df; border-bottom:1px solid #e7e7df;">
+      <div style="padding:24px; text-align:center; border-right:1px solid #e7e7df;"><div style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:42px; color:#3d6b3a;">5</div><div style="font-family:'PT Serif',serif; font-style:italic; font-size:12px; color:#9a9b8f;">years in PM</div></div>
+      <div style="padding:24px; text-align:center; border-right:1px solid #e7e7df;"><div style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:42px; color:#3d6b3a;">3</div><div style="font-family:'PT Serif',serif; font-style:italic; font-size:12px; color:#9a9b8f;">industries</div></div>
+      <div style="padding:24px; text-align:center;"><div style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:42px; color:#3d6b3a;">4mo</div><div style="font-family:'PT Serif',serif; font-style:italic; font-size:12px; color:#9a9b8f;">on clay</div></div>
+    </div>
+    <!-- work teaser -->
+    <div style="padding:34px;">
+      <div style="font-family:'PT Serif',serif; font-style:italic; font-size:13px; color:#9a9b8f; margin-bottom:6px;">02 / 04 — work</div>
+      <div style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:42px; margin-bottom:20px;">the <span style="font-style:italic; color:#3d6b3a;">draw sheet.</span></div>
+      <div style="padding:16px 0; border-top:1px solid #e7e7df; display:flex; justify-content:space-between; align-items:baseline;"><div><div style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px;">Network Solutions</div><div style="font-family:'PT Serif',serif; font-style:italic; font-size:12px; color:#9a9b8f;">Aug '24 – present</div></div><span style="font-family:'PT Serif',serif; font-style:italic; font-size:12px; color:#3d6b3a;">active</span></div>
+      <div style="padding:16px 0; border-top:1px solid #e7e7df;"><div style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px;">Neerakriti</div><div style="font-family:'PT Serif',serif; font-style:italic; font-size:12px; color:#9a9b8f;">May '24 – present · side project</div></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
