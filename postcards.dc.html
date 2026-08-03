@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<script src="./image-slot.js"></script>
 <style>
   *{ box-sizing:border-box; }
   html,body{ margin:0; background:#b4552f; }
@@ -22,17 +21,18 @@
   .dust{ position:absolute; border-radius:50%; pointer-events:none; }
   .navl{ transition:opacity .25s ease; opacity:.75; } .navl:hover{ opacity:1; }
   .pcard{ transition:transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease; }
-  .pcard:hover{ transform:rotate(0deg) translateY(-8px) !important; box-shadow:0 18px 40px rgba(46,26,14,.3) !important; }
-
+  .pcard:hover{ transform:rotate(0deg) translateY(-10px) !important; box-shadow:0 22px 48px rgba(46,26,14,.34) !important; }
   @media (max-width:900px){
-    .rgrid, .rgrid3, .pieces{ grid-template-columns:1fr !important; }
-    .cols3{ columns:1 !important; }
-    .wrow{ grid-template-columns:1fr !important; }
     nav{ flex-wrap:wrap !important; gap:14px !important; }
     .navlinks{ flex-wrap:wrap !important; gap:16px 22px !important; }
-    .padcard{ padding:44px 28px !important; }
-    .irow{ flex-wrap:wrap !important; }
-    .irow .icard{ flex:1 1 220px !important; }
+    .pgrid{ grid-template-columns:1fr !important; gap:36px !important; }
+    .pghead{ padding-top:4vh !important; }
+    .pghead p{ font-size:16px !important; margin-top:24px !important; }
+    .pgcover{ padding-top:2vh !important; }
+    .pgcover > div{ padding:10px 10px 12px !important; }
+    .pgset{ padding-top:4vh !important; padding-bottom:9vh !important; }
+    .pcard{ padding:10px 10px 12px !important; }
+    .pgfoot{ flex-direction:column !important; gap:8px !important; }
   }
 </style>
 </helmet>
@@ -55,29 +55,6 @@
   <div aria-hidden="true" style="position:fixed; inset:0; z-index:0; pointer-events:none;">
     <div style="position:absolute; left:6vw; top:0; bottom:0; width:3px; background:rgba(247,239,223,.34);"></div>
     <div style="position:absolute; right:6vw; top:0; bottom:0; width:3px; background:rgba(247,239,223,.34);"></div>
-  </div>
-
-  <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; pointer-events:none;">
-    <sc-for list="{{ marks }}" as="mk" hint-placeholder-count="3">
-      <div style="position:absolute; left:{{ mk.x }}; top:{{ mk.y }}; width:{{ mk.w }}px; height:{{ mk.h }}px; transform:rotate({{ mk.rot }}deg); animation:markIn .5s ease both;">
-        <svg width="100%" height="100%" viewBox="0 0 60 40" preserveAspectRatio="none" style="display:block; overflow:visible;">
-          <defs>
-            <filter id="mkrough" x="-30%" y="-30%" width="160%" height="160%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.16 0.24" numOctaves="2" seed="9" result="n"></feTurbulence>
-              <feDisplacementMap in="SourceGraphic" in2="n" scale="7"></feDisplacementMap>
-            </filter>
-          </defs>
-          <g filter="url(#mkrough)">
-            <ellipse cx="30" cy="20" rx="26" ry="14.5" fill="rgba(112,42,16,0.14)"></ellipse>
-            <ellipse cx="29" cy="20.5" rx="20" ry="10.5" fill="rgba(96,34,12,0.16)"></ellipse>
-            <ellipse cx="28" cy="21.5" rx="12.5" ry="6" fill="rgba(80,26,9,0.18)"></ellipse>
-            <path d="M 6 24 Q 30 37 54 22" stroke="rgba(236,158,110,0.30)" stroke-width="3.2" fill="none" stroke-linecap="round"></path>
-            <path d="M 9 13.5 Q 30 5.5 51 14.5" stroke="rgba(70,24,8,0.14)" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
-            <path d="M 46 20 Q 56 19 62 18.5" stroke="rgba(96,34,12,0.14)" stroke-width="5" fill="none" stroke-linecap="round"></path>
-          </g>
-        </svg>
-      </div>
-    </sc-for>
   </div>
 
   <div ref="{{ fx }}" aria-hidden="true" style="position:fixed; inset:0; z-index:90; pointer-events:none; overflow:hidden;">
@@ -110,63 +87,65 @@
   <!-- ===== NAV ===== -->
   <nav style="position:relative; z-index:5; display:flex; justify-content:space-between; align-items:center; padding:28px 8vw;">
     <a href="homepage.dc.html" style="text-decoration:none; font-family:'Caveat',cursive; font-weight:600; font-size:30px; color:#f7efdf;">kriti</a>
-    <div class="navlinks" style="display:flex; gap:34px; align-items:center; font-family:'Caveat',cursive; font-size:22px; letter-spacing:0.02em;">
-      <a href="homepage.dc.html#about" class="navl" style="text-decoration:none; color:#f7efdf;">about</a>
-      <a href="homepage.dc.html#work" class="navl" style="text-decoration:none; color:#f7efdf;">work</a>
-      <a href="homepage.dc.html#interests" class="navl" style="text-decoration:none; color:#f7efdf;">off court</a>
-      <a href="homepage.dc.html#contact" class="navl" style="text-decoration:none; color:#f7efdf;">hello</a>
+    <div class="navlinks" style="display:flex; gap:34px; align-items:center; font-size:13px; letter-spacing:0.14em; text-transform:uppercase;">
+      <a href="homepage.dc.html#about" class="navl" style="text-decoration:none; color:#f7efdf;">About</a>
+      <a href="homepage.dc.html#work" class="navl" style="text-decoration:none; color:#f7efdf;">Work</a>
+      <a href="homepage.dc.html#interests" class="navl" style="text-decoration:none; color:#f7efdf;">Off court</a>
+      <a href="homepage.dc.html#contact" class="navl" style="text-decoration:none; color:#f7efdf;">Hello</a>
     </div>
   </nav>
 
   <!-- ===== HEADER ===== -->
-  <header style="position:relative; z-index:2; padding:7vh 8vw 6vh; max-width:1300px;">
-    <div style="display:flex; gap:10px; align-items:center; font-size:13px; color:#ffd9b8; margin-bottom:26px;">
+  <header class="pghead" style="position:relative; z-index:2; padding:7vh 8vw 5vh; max-width:1300px;">
+    <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; font-size:13px; color:#ffd9b8; margin-bottom:26px;">
       <a href="homepage.dc.html" style="color:#ffd9b8;">home</a><span>→</span>
-      <a href="homepage.dc.html#interests" style="color:#ffd9b8;">interests</a><span>→</span>
-      <span style="color:#f7efdf;">photography</span>
+      <a href="photography.dc.html" style="color:#ffd9b8;">photography</a><span>→</span>
+      <span style="color:#f7efdf;">postcards</span>
     </div>
-    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:8px;">interests — 03</div>
-    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(64px,11vw,150px); line-height:0.95; margin:0;">photogra<em style="font-style:italic;">phy.</em></h1>
+    <div style="font-family:'Caveat',cursive; font-size:30px; color:#ffd9b8; transform:rotate(-2deg); margin-bottom:10px;">greetings from the baseline —</div>
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(52px,8vw,110px); line-height:0.95; margin:0;">postcards from a <em style="font-style:italic;">clay court.</em></h1>
+    <p style="max-width:560px; font-size:18px; line-height:1.7; color:#fbe9d4; margin:34px 0 0;">Frames from the courts I play on, turned into postcards. The soil where I have been toiling for months to become the most mid athlete ever.</p>
   </header>
 
-  <!-- ===== ON PHOTOGRAPHY ===== -->
-  <section style="position:relative; z-index:2; padding:4vh 8vw 10vh; max-width:1300px;">
-    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:22px;">on photography</div>
-    <div class="rgrid" style="display:grid; grid-template-columns:1fr 320px; gap:56px; align-items:start;">
-      <div style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(2deg); box-shadow:0 14px 32px rgba(46,26,14,.25); order:2;">
-        <div style="width:100%; height:340px;"><image-slot id="photography-hero" shape="rect" fit="contain" placeholder="Drop a photograph" src="uploads/photography.jpg"></image-slot></div>
-        <div style="font-family:'Caveat',cursive; font-size:23px; color:#a34a28; text-align:center; margin-top:10px;">the eye</div>
-      </div>
-      <div style="order:1;">
-        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5vw,62px); line-height:1.05; margin:0 0 26px;">the <em>eye.</em></h2>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">This is a funny one. This wasn't one of those things I discovered as a child or even aspired to do. But one day, it just clicked — pun intended.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">I was a fresher in college with a cheap phone and a low quality camera — a Redmi 4A. But our college blessed us with some of the best sunsets, and I would instinctively take my phone out to capture a glimpse, always knowing I'd never do justice to the reality.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">But I enjoyed it a lot. It brought me a sense of joy very inexplicable and very genuine in nature. Soon after, I also started editing on VSCO and that hasn't stopped.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 34px; color:#fbe9d4;">I've largely captured pictures with my phone and only recently was gifted a <strong style="color:#f7efdf;">35mm</strong>. I haven't taken this seriously — all pictures I've clicked are things I've liked witnessing with my own eyes.</p>
-        <a href="https://vsco.co/kriti3/gallery" style="text-decoration:none; color:#f7efdf; background:#a34a28; padding:15px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">View my VSCO →</a>
-      </div>
+  <!-- ===== COVER ===== -->
+  <section class="pgcover" style="position:relative; z-index:2; padding:4vh 8vw 4vh; max-width:1300px;">
+    <div style="background:#f7efdf; padding:14px 14px 18px; transform:rotate(-1deg); box-shadow:0 18px 44px rgba(46,26,14,.28); max-width:820px;">
+      <img src="uploads/post2.png" alt="Postcards from a tennis court — cover" style="display:block; width:100%; height:auto;">
     </div>
   </section>
 
-  <!-- ===== SETS ===== -->
-  <section style="position:relative; z-index:2; padding:2vh 8vw 12vh; max-width:1300px;">
-    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5vw,62px); line-height:1.05; margin:0 0 44px;">the <em>sets</em></h2>
-    <div class="pieces" style="display:grid; grid-template-columns:repeat(3,1fr); gap:26px; max-width:420px;">
-      <a href="postcards.dc.html" class="pcard" style="text-decoration:none; color:#3a2114; background:#f7efdf; padding:26px 24px 20px; transform:rotate(-1.5deg); box-shadow:0 10px 26px rgba(46,26,14,.22); display:flex; flex-direction:column; justify-content:space-between; min-height:170px;">
-        <div>
-          <div style="font-family:'Instrument Serif',serif; font-style:italic; font-size:28px; margin-bottom:10px;">postcards</div>
-          <div style="font-size:15px; line-height:1.5; color:#6b4630;">frames from the courts I play on</div>
-        </div>
-        <div style="font-family:'Caveat',cursive; font-size:21px; color:#a34a28; margin-top:16px;">view →</div>
-      </a>
+  <!-- ===== POSTCARDS ===== -->
+  <section class="pgset" style="position:relative; z-index:2; padding:6vh 8vw 14vh; max-width:1300px;">
+    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:22px;">the set — six cards</div>
+    <div class="pgrid" style="display:grid; grid-template-columns:1fr 1fr; gap:56px 44px;">
+      <div class="pcard" style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(-1.5deg); box-shadow:0 12px 30px rgba(46,26,14,.24);">
+        <img src="uploads/post2.png" alt="postcards from a tennis court" style="display:block; width:100%; height:auto;">
+      </div>
+      <div class="pcard" style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(1.2deg); box-shadow:0 12px 30px rgba(46,26,14,.24);">
+        <img src="uploads/post1 (2).png" alt="yellow house, blue sky" style="display:block; width:100%; height:auto;">
+      </div>
+      <div class="pcard" style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(-0.8deg); box-shadow:0 12px 30px rgba(46,26,14,.24);">
+        <img src="uploads/post1 (3).png" alt="palm shadows at golden hour" style="display:block; width:100%; height:auto;">
+      </div>
+      <div class="pcard" style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(1.6deg); box-shadow:0 12px 30px rgba(46,26,14,.24);">
+        <img src="uploads/post1 (4)-3c34f9ba.png" alt="a full basket, top down" style="display:block; width:100%; height:auto;">
+      </div>
+      <div class="pcard" style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(-1.2deg); box-shadow:0 12px 30px rgba(46,26,14,.24);">
+        <img src="uploads/post3 (2) (1).png" alt="mid-rally, from the baseline" style="display:block; width:100%; height:auto;">
+      </div>
+      <div class="pcard" style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(0.9deg); box-shadow:0 12px 30px rgba(46,26,14,.24);">
+        <img src="uploads/post3 (3) (1).png" alt="balls on strings" style="display:block; width:100%; height:auto;">
+      </div>
+
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <section style="position:relative; z-index:2; background:#f7efdf; color:#3a2114;">
+    <div aria-hidden="true" style="height:14px; background:repeating-linear-gradient(90deg, #f7efdf 0 26px, transparent 26px 34px); margin-top:-14px;"></div>
     <div style="padding:8vh 8vw; max-width:1300px;">
-      <a href="homepage.dc.html#interests" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to interests</a>
-      <div style="margin-top:60px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a5b40;">
+      <a href="photography.dc.html" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to photography</a>
+      <div class="pgfoot" style="margin-top:60px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a5b40;">
         <span>© 2026 Kriti Nigam</span><span>Bangalore, India</span>
       </div>
     </div>
@@ -233,14 +212,7 @@ class Component extends DCLogic {
   }
 
   renderVals(){
-    return {
-      root:this.rootRef, fx:this.fxRef, cball:this.cballRef,
-      marks: [
-        { x:'16%', y:'480px', w:52, h:34, rot:-18 },
-        { x:'74%', y:'900px', w:44, h:30, rot:24 },
-        { x:'40%', y:'1300px', w:50, h:33, rot:10 },
-      ],
-    };
+    return { root:this.rootRef, fx:this.fxRef, cball:this.cballRef };
   }
 }
 </script>
