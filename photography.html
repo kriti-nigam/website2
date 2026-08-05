@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script src="./image-slot.js"></script>
 <style>
   *{ box-sizing:border-box; }
   html,body{ margin:0; background:#b4552f; }
@@ -22,7 +23,7 @@
   .navl{ transition:opacity .25s ease; opacity:.75; } .navl:hover{ opacity:1; }
 
   @media (max-width:900px){
-    .rgrid, .rgrid3, .pieces{ grid-template-columns:1fr !important; }
+    .rgrid, .rgrid3{ grid-template-columns:1fr !important; }
     .cols3{ columns:1 !important; }
     .wrow{ grid-template-columns:1fr !important; }
     nav{ flex-wrap:wrap !important; gap:14px !important; }
@@ -55,7 +56,7 @@
   </div>
 
   <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; pointer-events:none;">
-    <sc-for list="{{ marks }}" as="mk" hint-placeholder-count="2">
+    <sc-for list="{{ marks }}" as="mk" hint-placeholder-count="3">
       <div style="position:absolute; left:{{ mk.x }}; top:{{ mk.y }}; width:{{ mk.w }}px; height:{{ mk.h }}px; transform:rotate({{ mk.rot }}deg); animation:markIn .5s ease both;">
         <svg width="100%" height="100%" viewBox="0 0 60 40" preserveAspectRatio="none" style="display:block; overflow:visible;">
           <defs>
@@ -116,24 +117,37 @@
   </nav>
 
   <!-- ===== HEADER ===== -->
-  <header style="position:relative; z-index:2; padding:7vh 8vw 5vh; max-width:1300px;">
-    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(52px,8vw,110px); line-height:0.95; margin:0;">futile <em style="font-style:italic;">devices.</em></h1>
+  <header style="position:relative; z-index:2; padding:7vh 8vw 6vh; max-width:1300px;">
+    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:8px;">interests — 03</div>
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(64px,11vw,150px); line-height:0.95; margin:0;">photogra<em style="font-style:italic;">phy.</em></h1>
   </header>
 
-  <!-- ===== PIECE ===== -->
-  <section style="position:relative; z-index:2; padding:4vh 8vw 12vh; max-width:1300px;">
-    <div class="padcard" style="background:#f7efdf; color:#3a2114; max-width:760px; margin:0 auto; padding:64px 60px 56px; transform:rotate(-0.8deg); box-shadow:0 18px 44px rgba(46,26,14,.28);">
-      <sc-for list="{{ paras }}" as="pg" hint-placeholder-count="6">
-        <p style="font-family:'Instrument Serif',serif; font-size:20px; line-height:1.8; margin:0 0 26px;">{{ pg.text }}</p>
-      </sc-for>
-      <div style="font-family:'Caveat',cursive; font-size:26px; color:#a34a28; text-align:right; transform:rotate(-1.5deg); margin-top:6px;">— kriti</div>
+  <!-- ===== ON PHOTOGRAPHY ===== -->
+  <section style="position:relative; z-index:2; padding:4vh 8vw 10vh; max-width:1300px;">
+    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:22px;">on photography</div>
+    <div class="rgrid" style="display:grid; grid-template-columns:1fr 320px; gap:56px; align-items:start;">
+      <div style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(2deg); box-shadow:0 14px 32px rgba(46,26,14,.25); order:2;">
+        <div style="width:100%; height:340px;"><image-slot id="photography-hero" shape="rect" fit="contain" placeholder="Drop a photograph" src="uploads/photography.jpg"></image-slot></div>
+        <div style="font-family:'Caveat',cursive; font-size:23px; color:#a34a28; text-align:center; margin-top:10px;">the eye</div>
+      </div>
+      <div style="order:1;">
+        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5vw,62px); line-height:1.05; margin:0 0 26px;">the <em>eye.</em></h2>
+        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">This is a funny one. This wasn't one of those things I discovered as a child or even aspired to do. But one day, it just clicked — pun intended.</p>
+        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">I was a fresher in college with a cheap phone and a low quality camera — a Redmi 4A. But our college blessed us with some of the best sunsets, and I would instinctively take my phone out to capture a glimpse, always knowing I'd never do justice to the reality.</p>
+        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">But I enjoyed it a lot. It brought me a sense of joy very inexplicable and very genuine in nature. Soon after, I also started editing on VSCO and that hasn't stopped.</p>
+        <p style="font-size:18px; line-height:1.75; margin:0 0 34px; color:#fbe9d4;">I've largely captured pictures with my phone and only recently was gifted a <strong style="color:#f7efdf;">35mm</strong>. I haven't taken this seriously — all pictures I've clicked are things I've liked witnessing with my own eyes.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
+          <a href="https://vsco.co/kriti3/gallery" style="text-decoration:none; color:#f7efdf; background:#a34a28; padding:15px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">View my VSCO →</a>
+          <a href="postcards.html" style="text-decoration:none; color:#f7efdf; background:transparent; border:2px solid #f7efdf; padding:15px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">View postcards →</a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <section style="position:relative; z-index:2; background:#f7efdf; color:#3a2114;">
     <div style="padding:8vh 8vw; max-width:1300px;">
-      <a href="writing.dc.html" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to writing</a>
+      <a href="index.html#interests" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to interests</a>
       <div style="margin-top:60px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a5b40;">
         <span>© 2026 Kriti Nigam</span><span>Bangalore, India</span>
       </div>
@@ -203,17 +217,10 @@ class Component extends DCLogic {
   renderVals(){
     return {
       root:this.rootRef, fx:this.fxRef, cball:this.cballRef,
-      paras: [
-        { text:"Do you reckon this incessant need to become something that won't get extinguished by being truly accepted and understood for who we are, all our nooks and niches? Why do we chase happiness? Why do we chase love? And why do we fail so much at it?" },
-        { text:"Maybe that's what being in love does to us, not make us lazy but just give us this immense joy of being accepted for who we are, with the comfort of knowing that even on the darkest days, someone will be there and stay for the ride. Being raised as a brown kid who was academically sound, I was immune to other critics in life, because scoring good grades made up for most of your vices in a brown home. But even then, I had my mother's heart and my father's brain. So I was always taught to be empathetic, and be a good person. To not judge others even though everyone around me was constantly doing that. To be kind, and every time I crossed someone less privileged than me, I had this urge to help them in some way, but I quickly noticed how people around me were not so enthusiastic about helping out such people and rather shunned them. And every time I crossed a stray pupper who was lost or stuck, I fed it and would bring it home. When I grew out of my clothes, we would always donate them at an orphanage and I would wonder to myself if those kids will ever have someone who would buy them new clothes. I was taught to ask questions and to be curious, to be creative and imaginative. Right was white and wrong was black and there were no greys and certainly no spectrum." },
-        { text:"Life is easy to navigate when you are a child. You just need three meals a day, some toys, friends and a few bedtime stories. And mostly, you lack critical thinking. So even though I had a lot of questions, I was too busy playing and no sooner would those questions arise than they'd vanish until they were triggered by the same stimulus and rose again. As I read Enid Blyton and Hercule Poirot during the library hour, I found myself loitering to other sections and wondered why I could not read those books." },
-        { text:"Adulting does not come with a manual, and it would be boring if it did because all of us would be the same and we will have more engineers and doctors. But in the chaos of black and white, there lies a whole palette of colours and nothing can be classified as just one simple thing because we're all a sum of our vices and virtues. Enid Blyton was soon replaced by Dan Brown and Jeffrey Archer and they were replaced by Murakami and Bukowski and Nietzsche. Starry Night and Girl with a Pearl Earring started making sense and I found myself connecting to the progression of Pablo's self-portraits through the years. Rumi and Kahlil Gibran pacified my nascent brain with their words. While Fly Like a G6 was replaced by Jesus of Suburbia." },
-        { text:"Pain became more tangible than just a bleeding wound or a burning headache as I stayed up at nights crying myself to bed. The comfort of my vanity faced harsh resistance as I entered the real world because I wasn't used to not knowing things, and I would always complete my syllabus so uncertainty was never a factor. My ignorance and lack of self-reflection were shattered when I had a heartbreak. And so, I find myself learning newer things and unlearning things as I had known them to be." },
-        { text:"Knowing and not knowing so many things, understanding how insignificant our fleeting lives are, learning how to process things and react in an unfashioned way gets overwhelming. And such realizations are even more fleeting, not inherently, but we drown them out unconsciously in the deluge of our futility." },
-      ],
       marks: [
-        { x:'12%', y:'560px', w:52, h:34, rot:-18 },
-        { x:'80%', y:'1200px', w:44, h:30, rot:24 },
+        { x:'16%', y:'480px', w:52, h:34, rot:-18 },
+        { x:'74%', y:'900px', w:44, h:30, rot:24 },
+        { x:'40%', y:'1300px', w:50, h:33, rot:10 },
       ],
     };
   }

@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<script src="./image-slot.js"></script>
 <style>
   *{ box-sizing:border-box; }
   html,body{ margin:0; background:#b4552f; }
@@ -23,7 +22,7 @@
   .navl{ transition:opacity .25s ease; opacity:.75; } .navl:hover{ opacity:1; }
 
   @media (max-width:900px){
-    .rgrid, .rgrid3{ grid-template-columns:1fr !important; }
+    .rgrid, .rgrid3, .pieces{ grid-template-columns:1fr !important; }
     .cols3{ columns:1 !important; }
     .wrow{ grid-template-columns:1fr !important; }
     nav{ flex-wrap:wrap !important; gap:14px !important; }
@@ -56,7 +55,7 @@
   </div>
 
   <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; pointer-events:none;">
-    <sc-for list="{{ marks }}" as="mk" hint-placeholder-count="3">
+    <sc-for list="{{ marks }}" as="mk" hint-placeholder-count="2">
       <div style="position:absolute; left:{{ mk.x }}; top:{{ mk.y }}; width:{{ mk.w }}px; height:{{ mk.h }}px; transform:rotate({{ mk.rot }}deg); animation:markIn .5s ease both;">
         <svg width="100%" height="100%" viewBox="0 0 60 40" preserveAspectRatio="none" style="display:block; overflow:visible;">
           <defs>
@@ -117,37 +116,22 @@
   </nav>
 
   <!-- ===== HEADER ===== -->
-  <header style="position:relative; z-index:2; padding:7vh 8vw 6vh; max-width:1300px;">
-    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:8px;">interests — 03</div>
-    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(64px,11vw,150px); line-height:0.95; margin:0;">photogra<em style="font-style:italic;">phy.</em></h1>
+  <header style="position:relative; z-index:2; padding:7vh 8vw 5vh; max-width:1300px;">
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(52px,8vw,110px); line-height:0.95; margin:0;">liber<em style="font-style:italic;">ty.</em></h1>
   </header>
 
-  <!-- ===== ON PHOTOGRAPHY ===== -->
-  <section style="position:relative; z-index:2; padding:4vh 8vw 10vh; max-width:1300px;">
-    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:22px;">on photography</div>
-    <div class="rgrid" style="display:grid; grid-template-columns:1fr 320px; gap:56px; align-items:start;">
-      <div style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(2deg); box-shadow:0 14px 32px rgba(46,26,14,.25); order:2;">
-        <div style="width:100%; height:340px;"><image-slot id="photography-hero" shape="rect" fit="contain" placeholder="Drop a photograph" src="uploads/photography.jpg"></image-slot></div>
-        <div style="font-family:'Caveat',cursive; font-size:23px; color:#a34a28; text-align:center; margin-top:10px;">the eye</div>
-      </div>
-      <div style="order:1;">
-        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5vw,62px); line-height:1.05; margin:0 0 26px;">the <em>eye.</em></h2>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">This is a funny one. This wasn't one of those things I discovered as a child or even aspired to do. But one day, it just clicked — pun intended.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">I was a fresher in college with a cheap phone and a low quality camera — a Redmi 4A. But our college blessed us with some of the best sunsets, and I would instinctively take my phone out to capture a glimpse, always knowing I'd never do justice to the reality.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">But I enjoyed it a lot. It brought me a sense of joy very inexplicable and very genuine in nature. Soon after, I also started editing on VSCO and that hasn't stopped.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 34px; color:#fbe9d4;">I've largely captured pictures with my phone and only recently was gifted a <strong style="color:#f7efdf;">35mm</strong>. I haven't taken this seriously — all pictures I've clicked are things I've liked witnessing with my own eyes.</p>
-        <div style="display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
-          <a href="https://vsco.co/kriti3/gallery" style="text-decoration:none; color:#f7efdf; background:#a34a28; padding:15px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">View my VSCO →</a>
-          <a href="postcards.dc.html" style="text-decoration:none; color:#f7efdf; background:transparent; border:2px solid #f7efdf; padding:15px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">View postcards →</a>
-        </div>
-      </div>
+  <!-- ===== POEM ===== -->
+  <section style="position:relative; z-index:2; padding:4vh 8vw 12vh; max-width:1300px;">
+    <div class="padcard" style="background:#f7efdf; color:#3a2114; max-width:680px; margin:0 auto; padding:64px 60px 56px; transform:rotate(-0.8deg); box-shadow:0 18px 44px rgba(46,26,14,.28);">
+      <p style="font-family:'Instrument Serif',serif; font-size:21px; line-height:1.75; margin:0 0 30px; white-space:pre-line;">{{ poem }}</p>
+      <div style="font-family:'Caveat',cursive; font-size:26px; color:#a34a28; text-align:right; transform:rotate(-1.5deg); margin-top:6px;">~scribbles of a liberated heart</div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <section style="position:relative; z-index:2; background:#f7efdf; color:#3a2114;">
     <div style="padding:8vh 8vw; max-width:1300px;">
-      <a href="index.html#interests" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to interests</a>
+      <a href="writing.html" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to writing</a>
       <div style="margin-top:60px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a5b40;">
         <span>© 2026 Kriti Nigam</span><span>Bangalore, India</span>
       </div>
@@ -217,10 +201,33 @@ class Component extends DCLogic {
   renderVals(){
     return {
       root:this.rootRef, fx:this.fxRef, cball:this.cballRef,
+      poem: `Sipping on her morning coffee,
+Her gaze, ever so timid, ever so real
+Squanders her empty heart, a smile
+So brave! Oh what a blush
+That shimmer in her highlight.
+The end of her playlist, the fear
+Of unfaithfulness.
+Fumbling for words
+gasping of void bliss.
+The demons, now screaming so loud
+The nights growing ugly
+The moon in retrograde amidst a clear sky.
+The liberty of knowledge
+The liberty of pain
+Liberty, a bane.
+yet, each passing day she grows
+finding comfort in her chaos
+Embracing one bad memory at time
+Her soul, a wrecked lost
+Finding comfort in printed pages
+That most do not find in empty eyes.
+The liberty to love
+The liberty to rejoice
+Liberty, her voice.`,
       marks: [
-        { x:'16%', y:'480px', w:52, h:34, rot:-18 },
-        { x:'74%', y:'900px', w:44, h:30, rot:24 },
-        { x:'40%', y:'1300px', w:50, h:33, rot:10 },
+        { x:'12%', y:'560px', w:52, h:34, rot:-18 },
+        { x:'80%', y:'1100px', w:44, h:30, rot:24 },
       ],
     };
   }

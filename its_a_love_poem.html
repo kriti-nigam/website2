@@ -117,15 +117,13 @@
 
   <!-- ===== HEADER ===== -->
   <header style="position:relative; z-index:2; padding:7vh 8vw 5vh; max-width:1300px;">
-    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(52px,8vw,110px); line-height:0.95; margin:0;">for my <em style="font-style:italic;">butterfly.</em></h1>
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(52px,8vw,110px); line-height:0.95; margin:0;">its a love <em style="font-style:italic;">poem.</em></h1>
   </header>
 
   <!-- ===== POEM ===== -->
   <section style="position:relative; z-index:2; padding:4vh 8vw 12vh; max-width:1300px;">
     <div class="padcard" style="background:#f7efdf; color:#3a2114; max-width:680px; margin:0 auto; padding:64px 60px 56px; transform:rotate(-0.8deg); box-shadow:0 18px 44px rgba(46,26,14,.28);">
-      <sc-for list="{{ stanzas }}" as="st" hint-placeholder-count="6">
-        <p style="font-family:'Instrument Serif',serif; font-size:21px; line-height:1.75; margin:0 0 30px; white-space:pre-line;">{{ st.text }}</p>
-      </sc-for>
+      <p style="font-family:'Instrument Serif',serif; font-size:21px; line-height:1.75; margin:0 0 30px; white-space:pre-line;">{{ poem }}</p>
       <div style="font-family:'Caveat',cursive; font-size:26px; color:#a34a28; text-align:right; transform:rotate(-1.5deg); margin-top:6px;">— kriti</div>
     </div>
   </section>
@@ -133,7 +131,7 @@
   <!-- ===== FOOTER ===== -->
   <section style="position:relative; z-index:2; background:#f7efdf; color:#3a2114;">
     <div style="padding:8vh 8vw; max-width:1300px;">
-      <a href="writing.dc.html" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to writing</a>
+      <a href="writing.html" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to writing</a>
       <div style="margin-top:60px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a5b40;">
         <span>© 2026 Kriti Nigam</span><span>Bangalore, India</span>
       </div>
@@ -203,40 +201,47 @@ class Component extends DCLogic {
   renderVals(){
     return {
       root:this.rootRef, fx:this.fxRef, cball:this.cballRef,
-      stanzas: [
-        { text:`staring into the vast infinite on an unsuspecting
-night, a fluttering feeling touched upon me
-a feeling so foreign and new and magical.
-with the advent of time i would call it my happiness
-happiness is but a butterfly
-migrating to warmer lands to seek shelter` },
-        { text:`ne'er a brighter sun shone its light on me
-incapable of being a beautiful butterfly, i was
-planted in these ashes and built my home here
-an abandoned rusted wasteland
-never in the hope of a visitor i made content,
-till you came and showed me a different season` },
-        { text:`roots of mine wet, shrieking and shivering
-previously only a landmine where others waged their war
-but you were warm, soft and delicate-
-a way of life unbeknownst to me
-with fruits and flowers and colors and heat` },
-        { text:`aching for the sun to come back to me
-guiding your way to me just this once
-and once again there\u2019d be a spring in my step
-and flowers on my leaves` },
-        { text:`i\u2019d hold the sun closer to me so you'd stay forever
-so we could blossom the life we\u2019d dreamed in a faraway land
-for you, i\u2019d become the sun if they'd let me
-now im just a cold barren land that i used to be` },
-        { text:`still colder days await me as i lay bare
-in the lonesome white nights and grey mornings
-with my voice a prisoner in my bones, i\u2019ll
-whisper of your lore unto eternity` },
-      ],
+      poem: `In the recess of vanilla twilight, the warmth of
+Honesty. The soft folds of her skin against
+his shaggy beard. The glimpse of a peaceful,
+snoring face in the matrix of chaos. Unwinding
+to Porcupine Tree and semi-burned pancakes
+making a jester of time, time mingled with
+two hearts and unseeming innocent
+laughters, laughters that dissolved into
+kisses like the dawn breaks into
+the day, days seemed infinite until
+the night took over, nights spent pondering
+the delicate details of his beautiful face;
+the razor cuts, the botched pimples,
+the mysterious marks, the chewed nails
+all seemed to flow
+into perfect harmony like Bach's symphony
+breakfasts that lasted till noon, and the break
+of sunlight was unbidden by these two nascent
+souls, who found their recuse from life
+in each other. Head massages with the breath
+of freshly bloomed flowers as they sat
+and gazed at the inebriating sunsets,
+catching a breath as the other made
+a silly excuse to spend more time,
+time was an outlaw, uniting
+and separating them.
+each lay their life bare;
+childhood stories to traumatic teen
+she thought she got closer
+to that canvas of incomplete picture
+as she nibbled on the chocolate cookie
+while he narrated tales from his travels;
+long and far and played his hearty guitar;
+elated as he sang his dearest songs
+They built that dream together
+Unhindered by the flaws in each other
+That dream, a requiem of their love
+That dream, an epitaph of their love.`,
       marks: [
         { x:'12%', y:'560px', w:52, h:34, rot:-18 },
-        { x:'80%', y:'1100px', w:44, h:30, rot:24 },
+        { x:'80%', y:'1200px', w:44, h:30, rot:24 },
       ],
     };
   }

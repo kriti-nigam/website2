@@ -1,4 +1,4 @@
-# Clay Court design system (kritinigam.dc.html + all sub-pages)
+# Clay Court design system (kritinigam.html + all sub-pages)
 
 ## Palette
 - Clay ground: #b4552f (body bg #b4552f; page vignettes: radial highlight rgba(255,214,168,.20) top-right, shadow rgba(60,20,5,.22) bottom-left)
@@ -25,7 +25,7 @@
 - Footer/contact: inverted cream section (#f7efdf bg, #3a2114 text)
 
 ## Signature interaction (site-wide)
-Cursor-follow tennis ball: 28px ball lerps to pointer (factor .09), rotate with x, fixed overlay z-90 pointer-events:none; kicks up clay dust when speed >5 (puffs rgba(214,120,76,.45)/rgba(232,166,124,.38) opacity .3–.55 kicked opposite travel + small #7a3014 grains falling back). Implementation lives in kritinigam.dc.html logic (dust(), componentDidMount) — copy verbatim to sub-pages. Note: set ball opacity every RAF frame (re-renders reset inline styles).
+Cursor-follow tennis ball: 28px ball lerps to pointer (factor .09), rotate with x, fixed overlay z-90 pointer-events:none; kicks up clay dust when speed >5 (puffs rgba(214,120,76,.45)/rgba(232,166,124,.38) opacity .3–.55 kicked opposite travel + small #7a3014 grains falling back). Implementation lives in kritinigam.html logic (dust(), componentDidMount) — copy verbatim to sub-pages. Note: set ball opacity every RAF frame (re-renders reset inline styles).
 
 ## Layout
 - Sections: padding 10vh 8vw, max-width 1300px; nav padding 28px 8vw

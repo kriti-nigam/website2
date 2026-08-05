@@ -12,7 +12,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<script src="./image-slot.js"></script>
 <style>
   *{ box-sizing:border-box; }
   html,body{ margin:0; background:#b4552f; }
@@ -21,8 +20,6 @@
   @keyframes markIn{ from{ opacity:0; transform:scale(.4);} to{ opacity:1; transform:scale(1);} }
   .dust{ position:absolute; border-radius:50%; pointer-events:none; }
   .navl{ transition:opacity .25s ease; opacity:.75; } .navl:hover{ opacity:1; }
-  .pcard{ transition:transform .45s cubic-bezier(.2,.7,.2,1), box-shadow .45s ease; }
-  .pcard:hover{ transform:rotate(0deg) translateY(-8px) !important; box-shadow:0 18px 40px rgba(46,26,14,.28); }
 
   @media (max-width:900px){
     .rgrid, .rgrid3, .pieces{ grid-template-columns:1fr !important; }
@@ -58,7 +55,7 @@
   </div>
 
   <div aria-hidden="true" style="position:absolute; inset:0; z-index:0; pointer-events:none;">
-    <sc-for list="{{ marks }}" as="mk" hint-placeholder-count="3">
+    <sc-for list="{{ marks }}" as="mk" hint-placeholder-count="2">
       <div style="position:absolute; left:{{ mk.x }}; top:{{ mk.y }}; width:{{ mk.w }}px; height:{{ mk.h }}px; transform:rotate({{ mk.rot }}deg); animation:markIn .5s ease both;">
         <svg width="100%" height="100%" viewBox="0 0 60 40" preserveAspectRatio="none" style="display:block; overflow:visible;">
           <defs>
@@ -119,48 +116,24 @@
   </nav>
 
   <!-- ===== HEADER ===== -->
-  <header style="position:relative; z-index:2; padding:7vh 8vw 6vh; max-width:1300px;">
-    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:8px;">interests — 02</div>
-    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(64px,11vw,150px); line-height:0.95; margin:0;">writ<em style="font-style:italic;">ing.</em></h1>
+  <header style="position:relative; z-index:2; padding:7vh 8vw 5vh; max-width:1300px;">
+    <h1 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(52px,8vw,110px); line-height:0.95; margin:0;">getaway <em style="font-style:italic;">car.</em></h1>
   </header>
 
-  <!-- ===== ON WRITING ===== -->
-  <section style="position:relative; z-index:2; padding:4vh 8vw 10vh; max-width:1300px;">
-    <div style="font-size:12px; letter-spacing:0.22em; text-transform:uppercase; color:#ffd9b8; margin-bottom:22px;">on writing</div>
-    <div class="rgrid" style="display:grid; grid-template-columns:320px 1fr; gap:56px; align-items:start;">
-      <div style="background:#f7efdf; padding:12px 12px 16px; transform:rotate(-2deg); box-shadow:0 14px 32px rgba(46,26,14,.25);">
-        <div style="width:100%; height:340px;"><image-slot id="writing-hero" shape="rect" fit="contain" placeholder="Drop a writing photo" src="uploads/writing.jpg"></image-slot></div>
-        <div style="font-family:'Caveat',cursive; font-size:23px; color:#a34a28; text-align:center; margin-top:10px;">odd scribblings</div>
-      </div>
-      <div>
-        <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5vw,62px); line-height:1.05; margin:0 0 26px;">the <em>scribbler.</em></h2>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">This section remains a work in progress. I used to write a lot more than I do now, but after some nervous system regulation and the development of my prefrontal cortex, I'm still finding my new voice.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0 0 16px; color:#fbe9d4;">Writing has always been my way of processing the world around me. From late-night poetry sessions in college to reflective essays about life's complexities, words have been my constant companion through growth, heartbreak, and discovery.</p>
-        <p style="font-size:18px; line-height:1.75; margin:0; color:#fbe9d4;">But here's a few random scribblings I've written over the years.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PIECES ===== -->
-  <section style="position:relative; z-index:2; padding:2vh 8vw 12vh; max-width:1300px;">
-    <h2 style="font-family:'Instrument Serif',serif; font-weight:400; font-size:clamp(38px,5vw,62px); line-height:1.05; margin:0 0 44px;">the <em>pieces</em></h2>
-    <div class="pieces" style="display:grid; grid-template-columns:repeat(3,1fr); gap:26px;">
-      <sc-for list="{{ pieces }}" as="p" hint-placeholder-count="7">
-        <a href="{{ p.href }}" class="pcard" style="text-decoration:none; color:#3a2114; background:#f7efdf; padding:26px 24px 20px; transform:rotate({{ p.tilt }}deg); box-shadow:0 10px 26px rgba(46,26,14,.22); display:flex; flex-direction:column; justify-content:space-between; min-height:170px;">
-          <div>
-            <div style="font-family:'Instrument Serif',serif; font-style:italic; font-size:28px; margin-bottom:10px;">{{ p.title }}</div>
-            <div style="font-size:15px; line-height:1.5; color:#6b4630;">{{ p.desc }}</div>
-          </div>
-          <div style="font-family:'Caveat',cursive; font-size:21px; color:#a34a28; margin-top:16px;">read →</div>
-        </a>
+  <!-- ===== POEM ===== -->
+  <section style="position:relative; z-index:2; padding:4vh 8vw 12vh; max-width:1300px;">
+    <div class="padcard" style="background:#f7efdf; color:#3a2114; max-width:680px; margin:0 auto; padding:64px 60px 56px; transform:rotate(-0.8deg); box-shadow:0 18px 44px rgba(46,26,14,.28);">
+      <sc-for list="{{ stanzas }}" as="st" hint-placeholder-count="6">
+        <p style="font-family:'Instrument Serif',serif; font-size:21px; line-height:1.75; margin:0 0 30px; white-space:pre-line;">{{ st.text }}</p>
       </sc-for>
+      <div style="font-family:'Caveat',cursive; font-size:26px; color:#a34a28; text-align:right; transform:rotate(-1.5deg); margin-top:6px;">— kriti</div>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <section style="position:relative; z-index:2; background:#f7efdf; color:#3a2114;">
     <div style="padding:8vh 8vw; max-width:1300px;">
-      <a href="index.html#interests" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to interests</a>
+      <a href="writing.html" style="text-decoration:none; color:#a34a28; border:2px solid #a34a28; padding:13px 30px; font-size:14px; letter-spacing:0.12em; text-transform:uppercase; display:inline-block;">← Back to writing</a>
       <div style="margin-top:60px; display:flex; justify-content:space-between; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:#8a5b40;">
         <span>© 2026 Kriti Nigam</span><span>Bangalore, India</span>
       </div>
@@ -230,19 +203,45 @@ class Component extends DCLogic {
   renderVals(){
     return {
       root:this.rootRef, fx:this.fxRef, cball:this.cballRef,
-      pieces: [
-        { title:'for my butterfly', desc:"if you ever lost someone you thought you'd end up with", href:'for_my_butterfly.dc.html', tilt:-1.5 },
-        { title:'yugen', desc:'something i wrote after i watched call me by your name', href:'yugen.dc.html', tilt:1 },
-        { title:'mum', desc:"if you've felt abandoned by your parents", href:'mum.dc.html', tilt:-0.5 },
-        { title:'its a love poem', desc:'the afterglow of your first real love', href:'its_a_love_poem.dc.html', tilt:1.5 },
-        { title:'getaway car', desc:'first real heartbreak, first time being dumped', href:'getaway_car.dc.html', tilt:-1 },
-        { title:'futile devices', desc:'sigh! life is tough', href:'futile_devices.dc.html', tilt:0.5 },
-        { title:'liberty', desc:'random scribbles', href:'liberty.dc.html', tilt:-1.5 },
+      stanzas: [
+        { text:`With the sun setting behind us and city lights below us,
+The air around me grew dense as it mixed
+With your lust as you blew out that last puff.
+My breathing grew heavy as my vision got blurry
+Fixated on you as you stood up and leaned in closer
+You knew, didn't you?` },
+        { text:`When our lips brushed against each other,
+The unfathomed distance between us floated by
+Fading far away from the chains of reality
+That broke with each stride you took towards me.
+You knew, didn't you?` },
+        { text:`Your hands ran down my body
+Claiming their trophy, my body your prize
+My heart, your prisoner.
+But long before your touch, your gaze
+Had already corrupted its way inside my breast.
+But you knew, didn't you?` },
+        { text:`As your tongue tasted mine
+It grew a liking to that warmth.
+That warmth fuelled by my pain and your fears
+Soon plummeted into a fire
+Now burning with your pain and my fears.
+But you knew, didn't you?` },
+        { text:`You knew this fire wouldn't extinguish
+Yet you kept it burning
+With the same old fears, the same old tears.
+Only to be tamed by our agony and misery
+But you left, leaving me with my burning carcass
+Because you knew, didn't you?` },
+        { text:`My burning body still covered in our debris.
+They told me to hate you but how could I?
+When the only love I had known was to hate myself
+I knew I pushed you away, as my unfounded wrath
+Became the keys to your getaway car.` },
       ],
       marks: [
-        { x:'16%', y:'480px', w:52, h:34, rot:-18 },
-        { x:'74%', y:'900px', w:44, h:30, rot:24 },
-        { x:'36%', y:'1450px', w:50, h:33, rot:10 },
+        { x:'12%', y:'560px', w:52, h:34, rot:-18 },
+        { x:'80%', y:'1200px', w:44, h:30, rot:24 },
       ],
     };
   }
